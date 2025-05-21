@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { motion } from 'framer-motion';
+import './Contact.css';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -28,13 +30,12 @@ const Contact = () => {
 
     try {
       // In a real app, this would be an API call to send the contact form
-      // For now, we'll just simulate a successful submission
       await new Promise((resolve) => setTimeout(resolve, 1000));
       
       setFormStatus({
         submitted: true,
         success: true,
-        message: 'Vielen Dank für Ihre Nachricht! Wir melden uns in Kürze bei Ihnen.',
+        message: 'Köszönjük üzenetét! Hamarosan felvesszük Önnel a kapcsolatot.',
       });
       
       // Reset form
@@ -45,59 +46,148 @@ const Contact = () => {
         message: '',
       });
     } catch (error) {
-      console.error('Error submitting form:', error);
+      console.error('Hiba történt:', error);
       setFormStatus({
         submitted: true,
         success: false,
-        message: 'Ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut.',
+        message: 'Sajnos hiba történt. Kérjük, próbálja újra később.',
       });
     } finally {
       setIsSubmitting(false);
     }
   };
 
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        when: "beforeChildren",
+        staggerChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { duration: 0.5 }
+    }
+  };
+
   return (
     <div className="contact-page">
-      <div className="container">
-        <h1>Kontakt</h1>
-        
-        <div className="contact-container">
-          <div className="contact-info">
-            <h2>Kontaktinformationen</h2>
+      <div className="contact-header">
+        <motion.h1 
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          Kapcsolat
+        </motion.h1>
+      </div>
+      
+      <motion.div 
+        className="contact-container"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+      >
+        <motion.div className="contact-info-card" variants={itemVariants}>
+          <div className="card-header">
+            <h2>Elérhetőségeink</h2>
+          </div>
+          <div className="card-content">
             <div className="info-item">
-              <strong>Adresse:</strong>
-              <p>Musikstraße 123<br />12345 Musikstadt</p>
+              <div className="icon-wrapper">
+                <i className="map-icon"></i>
+              </div>
+              <div className="info-text">
+                <strong>Cím:</strong>
+                <p>Budapest terület</p>
+              </div>
             </div>
+            
             <div className="info-item">
-              <strong>Telefon:</strong>
-              <p>+49 123 456789</p>
+              <div className="icon-wrapper">
+                <i className="phone-icon"></i>
+              </div>
+              <div className="info-text">
+                <strong>Telefon:</strong>
+                <p>+36 30 994 3215</p>
+              </div>
             </div>
+            
             <div className="info-item">
-              <strong>E-Mail:</strong>
-              <p>info@musikverleih.de</p>
+              <div className="icon-wrapper">
+                <i className="email-icon"></i>
+              </div>
+              <div className="info-text">
+                <strong>E-Mail:</strong>
+                <p>nonamesound0@gmail.com</p>
+              </div>
             </div>
+            
             <div className="info-item">
-              <strong>Öffnungszeiten:</strong>
-              <p>
-                Montag - Freitag: 9:00 - 18:00 Uhr<br />
-                Samstag: 10:00 - 14:00 Uhr<br />
-                Sonntag: Geschlossen
-              </p>
+              <div className="icon-wrapper">
+                <i className="service-icon"></i>
+              </div>
+              <div className="info-text">
+                <strong>Szolgáltatások:</strong>
+                <p>
+                  BÁROK / KLUBOK / ESKÜVŐK<br />
+                  SZÜLETÉSNAPOK / RENDEZVÉNYEK
+                </p>
+              </div>
+            </div>
+            
+            <div className="info-item">
+              <div className="icon-wrapper">
+                <i className="delivery-icon"></i>
+              </div>
+              <div className="info-text">
+                <strong>Kiszállítás:</strong>
+                <p>BUDAPEST TERÜLETÉN INGYENES KISZÁLLÁS!</p>
+              </div>
+            </div>
+            
+            <div className="motto">
+              <p>"SZÓLJON, HOGY MINŐSÉG SZÓLJON!"</p>
             </div>
           </div>
-          
-          <div className="contact-form">
-            <h2>Schreiben Sie uns</h2>
-            
+        </motion.div>
+        
+        <motion.div className="contact-form-card" variants={itemVariants}>
+          <div className="card-header">
+            <h2>Írjon nekünk</h2>
+          </div>
+          <div className="card-content">
             {formStatus.submitted && formStatus.success ? (
-              <div className="success-message">
-                {formStatus.message}
-              </div>
+              <motion.div 
+                className="success-message"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5 }}
+              >
+                <div className="success-icon"></div>
+                <p>{formStatus.message}</p>
+                <button 
+                  className="new-message-button"
+                  onClick={() => setFormStatus({ submitted: false, success: false, message: '' })}
+                >
+                  Új üzenet küldése
+                </button>
+              </motion.div>
             ) : (
               <form onSubmit={handleSubmit}>
                 <div className="form-group">
-                  <label htmlFor="name">Name *</label>
-                  <input
+                  <label htmlFor="name">Név <span className="required">*</span></label>
+                  <motion.input
+                    whileFocus={{ scale: 1.02 }}
+                    transition={{ duration: 0.2 }}
                     type="text"
                     id="name"
                     name="name"
@@ -108,8 +198,10 @@ const Contact = () => {
                 </div>
                 
                 <div className="form-group">
-                  <label htmlFor="email">E-Mail *</label>
-                  <input
+                  <label htmlFor="email">E-Mail <span className="required">*</span></label>
+                  <motion.input
+                    whileFocus={{ scale: 1.02 }}
+                    transition={{ duration: 0.2 }}
                     type="email"
                     id="email"
                     name="email"
@@ -121,7 +213,9 @@ const Contact = () => {
                 
                 <div className="form-group">
                   <label htmlFor="phone">Telefon</label>
-                  <input
+                  <motion.input
+                    whileFocus={{ scale: 1.02 }}
+                    transition={{ duration: 0.2 }}
                     type="tel"
                     id="phone"
                     name="phone"
@@ -131,43 +225,68 @@ const Contact = () => {
                 </div>
                 
                 <div className="form-group">
-                  <label htmlFor="message">Nachricht *</label>
-                  <textarea
+                  <label htmlFor="message">Üzenet <span className="required">*</span></label>
+                  <motion.textarea
+                    whileFocus={{ scale: 1.02 }}
+                    transition={{ duration: 0.2 }}
                     id="message"
                     name="message"
                     rows="5"
                     value={formData.message}
                     onChange={handleChange}
                     required
-                  ></textarea>
+                  ></motion.textarea>
                 </div>
                 
                 <div className="form-group">
-                  <button type="submit" className="submit-button" disabled={isSubmitting}>
-                    {isSubmitting ? 'Wird gesendet...' : 'Nachricht senden'}
-                  </button>
+                  <motion.button 
+                    type="submit" 
+                    className="submit-button"
+                    disabled={isSubmitting}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    {isSubmitting ? (
+                      <span className="spinner"></span>
+                    ) : (
+                      'Üzenet küldése'
+                    )}
+                  </motion.button>
                 </div>
                 
                 {formStatus.submitted && !formStatus.success && (
-                  <div className="error-message">
+                  <motion.div 
+                    className="error-message"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.3 }}
+                  >
                     {formStatus.message}
-                  </div>
+                  </motion.div>
                 )}
               </form>
             )}
           </div>
-        </div>
-        
-        <div className="map-container">
-          <h2>So finden Sie uns</h2>
-          <div className="map-placeholder">
-            {/* In a real app, you would embed a Google Map or similar here */}
-            <div className="map-image">
-              Hier würde eine Karte angezeigt werden.
-            </div>
+        </motion.div>
+      </motion.div>
+      
+      <motion.div 
+        className="qr-section"
+        variants={itemVariants}
+        initial="hidden"
+        animate="visible"
+      >
+        <div className="qr-container">
+          <div className="qr-text">
+            <h3>Termékeinkhez</h3>
+            <p>Olvassa be a QR Kódot!</p>
+          </div>
+          <div className="qr-image">
+            {/* QR code placeholder - would be replaced with an actual image */}
+            <div className="qr-placeholder"></div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

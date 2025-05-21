@@ -313,3 +313,5 @@
 2025-05-21 21:13:01,020 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:13:01] "GET /api/articles HTTP/1.1" 200 -
 2025-05-21 21:13:06,655 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:13:06] "GET /api/articles?featured=true HTTP/1.1" 200 -
 2025-05-21 21:13:06,661 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:13:06] "GET /api/articles?featured=true HTTP/1.1" 200 -
+2025-05-21 21:13:53,447 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:13:53] "GET /api/articles HTTP/1.1" 200 -
+2025-05-21 21:13:53,468 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:13:53] "GET /api/articles HTTP/1.1" 200 -
