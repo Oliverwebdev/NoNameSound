@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { API_URL } from '../api';
 
 const Landing = () => {
   const [featuredProducts, setFeaturedProducts] = useState([]);
@@ -9,7 +10,8 @@ const Landing = () => {
     // Fetch featured products from API
     const fetchFeaturedProducts = async () => {
       try {
-        const response = await fetch('/api/articles?featured=true');
+        const response = await fetch(`${API_URL}/articles?featured=true`);
+
         if (!response.ok) {
           throw new Error('Failed to fetch');
         }

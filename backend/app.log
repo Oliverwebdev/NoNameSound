@@ -104,3 +104,13 @@
 2025-05-21 16:27:08,168 - app - ERROR - Fehler beim Senden der E-Mail: [Errno -2] Name or service not known
 2025-05-21 16:27:08,168 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 16:27:08] "[35m[1mPOST /api/rentals/request HTTP/1.1[0m" 201 -
 2025-05-21 16:27:08,174 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 16:27:08] "GET /api/stats HTTP/1.1" 200 -
+2025-05-21 17:39:20,134 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-21 17:39:20,134 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-21 17:39:20,136 - werkzeug - INFO -  * Restarting with stat
+2025-05-21 17:39:20,394 - werkzeug - WARNING -  * Debugger is active!
+2025-05-21 17:39:20,394 - werkzeug - INFO -  * Debugger PIN: 462-247-958
+2025-05-21 17:39:32,781 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 17:39:32] "GET /api/articles HTTP/1.1" 200 -
+2025-05-21 17:39:32,924 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 17:39:32] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-05-21 17:54:04,198 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 17:54:04] "OPTIONS /api/auth/login HTTP/1.1" 200 -
+2025-05-21 17:54:04,300 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 17:54:04] "POST /api/auth/login HTTP/1.1" 200 -
