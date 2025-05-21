@@ -5,3 +5,7 @@
 2025-05-21 14:40:11,845 - werkzeug - WARNING -  * Debugger is active!
 2025-05-21 14:40:11,845 - werkzeug - INFO -  * Debugger PIN: 462-247-958
 2025-05-21 14:40:18,165 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 14:40:18] "[31m[1mPOST /api/auth/login HTTP/1.1[0m" 401 -
+2025-05-21 14:45:30,314 - werkzeug - INFO -  * Detected change in '/home/oliver/Desktop/NoNameSound/backend/dbtest.py', reloading
+2025-05-21 14:45:30,421 - werkzeug - INFO -  * Restarting with stat
+2025-05-21 14:45:30,868 - werkzeug - WARNING -  * Debugger is active!
+2025-05-21 14:45:30,869 - werkzeug - INFO -  * Debugger PIN: 462-247-958
