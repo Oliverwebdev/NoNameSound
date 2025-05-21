@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import './Products.css'; // Wir werden eine separate CSS-Datei erstellen
 
 const Products = () => {
   const [products, setProducts] = useState([]);
@@ -7,6 +8,7 @@ const Products = () => {
   const [error, setError] = useState(null);
   const [filter, setFilter] = useState('all');
   const [searchTerm, setSearchTerm] = useState('');
+  const [isFilterOpen, setIsFilterOpen] = useState(false);
 
   useEffect(() => {
     // Fetch products from API
@@ -55,10 +57,15 @@ const Products = () => {
     setFilter(e.target.value);
   };
 
+  const toggleFilterMenu = () => {
+    setIsFilterOpen(!isFilterOpen);
+  };
+
   return (
     <div className="products-page">
+      <div className="gradient-background"></div>
       <div className="container">
-        <h1>Unsere Produkte</h1>
+        <h1 className="page-title">Unsere Produkte</h1>
         
         <div className="products-filters">
           <div className="search-box">
@@ -67,20 +74,35 @@ const Products = () => {
               placeholder="Produkt suchen..."
               value={searchTerm}
               onChange={handleSearchChange}
+              className="search-input"
             />
+            <span className="search-icon">🔍</span>
           </div>
           
-          <div className="filter-selector">
-            <label htmlFor="availability-filter">Verfügbarkeit:</label>
-            <select 
-              id="availability-filter" 
-              value={filter} 
-              onChange={handleFilterChange}
+          <div className="filter-container">
+            <button 
+              className="filter-toggle" 
+              onClick={toggleFilterMenu}
+              aria-expanded={isFilterOpen}
             >
-              <option value="all">Alle Produkte</option>
-              <option value="available">Nur verfügbare</option>
-              <option value="unavailable">Nur nicht verfügbare</option>
-            </select>
+              Filter {isFilterOpen ? '▲' : '▼'}
+            </button>
+            
+            <div className={`filter-dropdown ${isFilterOpen ? 'open' : ''}`}>
+              <div className="filter-selector">
+                <label htmlFor="availability-filter">Verfügbarkeit:</label>
+                <select 
+                  id="availability-filter" 
+                  value={filter} 
+                  onChange={handleFilterChange}
+                  className="filter-select"
+                >
+                  <option value="all">Alle Produkte</option>
+                  <option value="available">Nur verfügbare</option>
+                  <option value="unavailable">Nur nicht verfügbare</option>
+                </select>
+              </div>
+            </div>
           </div>
         </div>
         
@@ -100,11 +122,12 @@ const Products = () => {
         ) : (
           <div className="products-grid">
             {filteredProducts.map((product) => (
-              <div key={product.id} className="product-card">
+              <div key={product.id} className="product-card" tabIndex="0">
                 <div className="product-image">
                   <img 
                     src={product.image_url || '/placeholder-instrument.jpg'} 
                     alt={product.name} 
+                    loading="lazy"
                   />
                   {(!product.is_available || product.quantity_available === 0) && (
                     <div className="unavailable-badge">
@@ -114,7 +137,7 @@ const Products = () => {
                 </div>
                 
                 <div className="product-details">
-                  <h3>{product.name}</h3>
+                  <h3 className="product-title">{product.name}</h3>
                   <p className="price">{product.price_per_day} € pro Tag</p>
                   
                   {product.description && (
@@ -126,7 +149,7 @@ const Products = () => {
                   
                   <div className="product-actions">
                     <button 
-                      className="rent-button"
+                      className={`rent-button ${!product.is_available || product.quantity_available === 0 ? 'disabled' : ''}`}
                       disabled={!product.is_available || product.quantity_available === 0}
                       onClick={() => {
                         // This would typically add the product to a rental cart or similar

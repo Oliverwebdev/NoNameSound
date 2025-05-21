@@ -3,3 +3,14 @@ create navbar and footer
 connect back and front
 
 time for some styling :D
+
+
+style vorgabe für das gesamte frontend: 
+Farbpalette:
+
+
+Musikalisch, hochwertig, warm, einladend, leicht retro, aber klar und digital.
+Warme Violetttöne (var(--primary-color): #7c4dff) als Hauptfarbe
+Warme Orange-Töne (var(--secondary-color): #ff7043) als Akzentfarbe
+Gemütliches Bernstein (var(--warm-accent): #ffab40) für Hover-Effekte
+Elegante dunkle Hintergründe mit subtilen Farbverläufen
