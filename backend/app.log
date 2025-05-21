@@ -114,3 +114,38 @@
 2025-05-21 17:39:32,924 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 17:39:32] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
 2025-05-21 17:54:04,198 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 17:54:04] "OPTIONS /api/auth/login HTTP/1.1" 200 -
 2025-05-21 17:54:04,300 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 17:54:04] "POST /api/auth/login HTTP/1.1" 200 -
+2025-05-21 17:58:53,677 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 17:58:53] "OPTIONS /api/auth/login HTTP/1.1" 200 -
+2025-05-21 17:58:53,797 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 17:58:53] "POST /api/auth/login HTTP/1.1" 200 -
+2025-05-21 18:04:37,745 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-21 18:04:37,745 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-21 18:04:37,746 - werkzeug - INFO -  * Restarting with stat
+2025-05-21 18:04:37,947 - werkzeug - WARNING -  * Debugger is active!
+2025-05-21 18:04:37,947 - werkzeug - INFO -  * Debugger PIN: 462-247-958
+2025-05-21 18:04:51,988 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 18:04:51] "OPTIONS /api/auth/login HTTP/1.1" 200 -
+2025-05-21 18:04:52,111 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 18:04:52] "POST /api/auth/login HTTP/1.1" 200 -
+2025-05-21 18:10:22,059 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 18:10:22] "OPTIONS /api/auth/login HTTP/1.1" 200 -
+2025-05-21 18:10:22,176 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 18:10:22] "POST /api/auth/login HTTP/1.1" 200 -
+2025-05-21 18:14:11,449 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 18:14:11] "[31m[1mGET /api/stats HTTP/1.1[0m" 401 -
+2025-05-21 18:17:46,053 - werkzeug - INFO -  * Detected change in '/home/oliver/Desktop/NoNameSound/backend/app.py', reloading
+2025-05-21 18:17:46,116 - werkzeug - INFO -  * Restarting with stat
+2025-05-21 18:17:46,351 - werkzeug - WARNING -  * Debugger is active!
+2025-05-21 18:17:46,351 - werkzeug - INFO -  * Debugger PIN: 462-247-958
+2025-05-21 18:18:58,818 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.46:5000
+2025-05-21 18:18:58,818 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-21 18:18:58,819 - werkzeug - INFO -  * Restarting with stat
+2025-05-21 18:18:59,032 - werkzeug - WARNING -  * Debugger is active!
+2025-05-21 18:18:59,032 - werkzeug - INFO -  * Debugger PIN: 462-247-958
+2025-05-21 18:19:02,476 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 18:19:02] "GET /api/stats HTTP/1.1" 200 -
+2025-05-21 18:19:02,490 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 18:19:02] "GET /api/stats HTTP/1.1" 200 -
+2025-05-21 18:19:12,887 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 18:19:12] "OPTIONS /api/auth/login HTTP/1.1" 200 -
+2025-05-21 18:19:13,009 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 18:19:13] "POST /api/auth/login HTTP/1.1" 200 -
+2025-05-21 18:19:13,064 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 18:19:13] "GET /api/stats HTTP/1.1" 200 -
+2025-05-21 18:19:13,101 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 18:19:13] "GET /api/stats HTTP/1.1" 200 -
+2025-05-21 18:19:19,093 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 18:19:19] "GET /api/stats HTTP/1.1" 200 -
+2025-05-21 18:19:20,373 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 18:19:20] "GET /api/stats HTTP/1.1" 200 -
+2025-05-21 18:19:25,684 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 18:19:25] "GET /api/stats HTTP/1.1" 200 -
+2025-05-21 18:19:27,977 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 18:19:27] "GET /api/stats HTTP/1.1" 200 -
