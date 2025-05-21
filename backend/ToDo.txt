@@ -1,0 +1,38 @@
+1. Sicherheit verbessern
+
+Sensible Daten in .env auslagern (höchste Priorität):
+
+SECRET_KEY, JWT_SECRET_KEY
+SMTP-Einstellungen und Anmeldedaten
+Datenbank-Pfad
+
+
+Password-Hashing-Verfahren überprüfen und ggf. auf aktuellere Methoden umstellen
+CSRF-Schutz einrichten für wichtige Endpunkte
+JWT-Token-Blacklisting für ausgeloggte Sessions implementieren
+Input-Validierung mit einer dedizierten Bibliothek wie Marshmallow oder Pydantic verstärken
+
+2. Modularisierung
+
+Code in logische Module aufteilen:
+
+models/ für Datenbankmodelle
+routes/ für API-Endpunkte (auth, articles, rentals)
+services/ für Business-Logik
+utils/ für Hilfsfunktionen
+config.py für die Konfiguration
+extensions.py für Flask-Erweiterungen
+
+
+
+3. Datenbankoptimierung
+
+SQLAlchemy ORM statt direkter SQLite-Verbindungen nutzen für:
+
+Bessere Typsicherheit
+Abstraktion der Datenbankebene
+Einfachere Migrations-Möglichkeiten
+
+
+Migration zu einer robusteren Datenbank wie PostgreSQL vorbereiten
+Datenbankmigrationen mit Alembic einrichten
