@@ -1,0 +1,5 @@
+create navbar and footer
+
+connect back and front
+
+time for some styling :D
