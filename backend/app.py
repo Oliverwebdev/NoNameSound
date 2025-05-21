@@ -665,6 +665,7 @@ def create_rental_request():
         logger.error(f"Fehler beim Erstellen der Mietanfrage: {str(e)}")
         return jsonify({"message": "Ein Fehler ist aufgetreten. Bitte versuche es später erneut."}), 500
 
+
 @app.route('/api/rentals', methods=['GET'])
 @jwt_required()
 @owner_required
@@ -686,7 +687,7 @@ def get_rental_requests():
     
     result = []
     for req in rental_requests:
-        # Artikel für diese Anfrage abrufen
+        # Artikel für diese Anfrage abrufen (DAS MUSS HIER SEIN!)
         items = db.execute(
             '''SELECT ri.*, a.name, a.price_per_day 
                FROM rental_request_items ri
@@ -694,7 +695,7 @@ def get_rental_requests():
                WHERE ri.request_id = ?''',
             (req['id'],)
         ).fetchall()
-        
+
         request_items = []
         for item in items:
             request_items.append({
@@ -704,11 +705,23 @@ def get_rental_requests():
                 'price_per_day': float(item['price_per_day'])
             })
         
-        # Berechnung der Mietdauer und des Gesamtpreises
-        start_date = datetime.date.fromisoformat(req['start_date'])
-        end_date = datetime.date.fromisoformat(req['end_date'])
-        rental_days = (end_date - start_date).days + 1
-        
+        # --- Datums-Fix: ---
+        def to_pydate(val):
+            if isinstance(val, datetime.date):
+                return val
+            if isinstance(val, str):
+                return datetime.date.fromisoformat(val)
+            raise ValueError("Invalid date format")
+        try:
+            start_date = to_pydate(req['start_date'])
+            end_date = to_pydate(req['end_date'])
+            rental_days = (end_date - start_date).days + 1
+        except Exception as e:
+            logger.error(f"Fehler bei der Datumsumwandlung: {e}")
+            start_date = None
+            end_date = None
+            rental_days = 0
+
         total_price = sum(
             item['price_per_day'] * item['quantity'] * rental_days 
             for item in request_items
@@ -730,6 +743,7 @@ def get_rental_requests():
         })
     
     return jsonify(result), 200
+
 
 @app.route('/api/rentals/<int:request_id>', methods=['GET'])
 @jwt_required()
