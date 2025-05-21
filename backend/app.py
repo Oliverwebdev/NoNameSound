@@ -64,12 +64,42 @@ def close_db(e=None):
     if db is not None:
         db.close()
 
-def init_db():
-    """Initialisiert die Datenbank mit den benötigten Tabellen"""
+# Neues Admin-Absicherungstool einfügen
+def ensure_admin_user():
     db = get_db()
-    with app.open_resource('schema.sql', mode='r') as f:
+    existing = db.execute("SELECT * FROM users WHERE username = 'admin'").fetchone()
+    if not existing:
+        password_hash = generate_password_hash("admin123")
+        db.execute('''
+            INSERT INTO users (username, password_hash, email, role)
+            VALUES (?, ?, ?, ?)
+        ''', ('admin', password_hash, 'admin@beispiel.de', 'owner'))
+        db.commit()
+        print("👤 Admin-User wurde explizit eingefügt.")
+
+# CLI-Befehl verbessern
+@app.cli.command('init-db')
+def init_db_command():
+    with open('schema.sql', 'w') as f:
+        f.write(schema_sql)
+    init_db()
+    ensure_admin_user()  # <- wichtige neue Zeile
+    os.remove('schema.sql')
+    print('✅ Datenbank initialisiert und Admin-User abgesichert.')
+    
+
+# Diese Funktion fehlt in Ihrem app.py und sollte nach get_db() eingefügt werden
+def init_db():
+    """Initialisiert die Datenbank mit dem Schema"""
+    db = get_db()
+    
+    # Schema-Datei ausführen
+    with open('schema.sql', 'r') as f:
         db.executescript(f.read())
+    
     db.commit()
+    print("Datenbank initialisiert mit Schema")
+
 
 # Schema als String für die Initialisierung
 schema_sql = '''
@@ -136,7 +166,7 @@ END;
 
 -- Admin-Benutzer erstellen (Passwort: admin123)
 INSERT INTO users (username, password_hash, email, role)
-VALUES ('admin', 'pbkdf2:sha256:150000$1tqHoRJx$2d89ce6e551c29b1dc2fad856299d46cd38f51bce04bdd816d154233924e944e', 'admin@beispiel.de', 'owner');
+VALUES ('admin', 'scrypt:32768:8:1$T2R2blC0gwLmGOM7$fcb699410c5d6470c9856357856978eb8bcb0ba7cbb9a680cd71b0763a4518d25cd80687af465aaa9f9b42dad97ba92d1083c47e20cc0a1b4143d4e0917603b5', 'admin@beispiel.de', 'owner');
 '''
 
 @app.cli.command('init-db')
