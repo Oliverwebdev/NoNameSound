@@ -1,0 +1,7 @@
+2025-05-21 14:40:11,548 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-21 14:40:11,549 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-21 14:40:11,551 - werkzeug - INFO -  * Restarting with stat
+2025-05-21 14:40:11,845 - werkzeug - WARNING -  * Debugger is active!
+2025-05-21 14:40:11,845 - werkzeug - INFO -  * Debugger PIN: 462-247-958
+2025-05-21 14:40:18,165 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 14:40:18] "[31m[1mPOST /api/auth/login HTTP/1.1[0m" 401 -
