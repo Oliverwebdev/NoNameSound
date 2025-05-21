@@ -11,9 +11,9 @@
   --warm-accent-dark: #c77c02;
   --text-light: #f5f5f5;
   --text-dark: #333333;
-  --background-dark: #1e1e2f;
-  --background-light: #2d2d44;
-  --card-background: rgba(46, 46, 66, 0.8);
+  --background-dark: #121212;
+  --background-light: #492424;
+  --card-background: rgba(33, 33, 68, 0.8);
   --card-border: rgba(124, 77, 255, 0.3);
   --box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
   --transition-speed: 0.3s;

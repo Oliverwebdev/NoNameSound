@@ -315,3 +315,17 @@
 2025-05-21 21:13:06,661 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:13:06] "GET /api/articles?featured=true HTTP/1.1" 200 -
 2025-05-21 21:13:53,447 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:13:53] "GET /api/articles HTTP/1.1" 200 -
 2025-05-21 21:13:53,468 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:13:53] "GET /api/articles HTTP/1.1" 200 -
+2025-05-21 21:33:28,739 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:33:28] "GET /api/articles?featured=true HTTP/1.1" 200 -
+2025-05-21 21:33:28,744 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:33:28] "GET /api/articles?featured=true HTTP/1.1" 200 -
+2025-05-21 21:33:29,741 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:33:29] "GET /api/articles HTTP/1.1" 200 -
+2025-05-21 21:33:29,762 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:33:29] "GET /api/articles HTTP/1.1" 200 -
+2025-05-21 21:33:43,166 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:33:43] "GET /api/articles?featured=true HTTP/1.1" 200 -
+2025-05-21 21:33:43,172 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:33:43] "GET /api/articles?featured=true HTTP/1.1" 200 -
+2025-05-21 21:33:44,780 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:33:44] "GET /api/articles HTTP/1.1" 200 -
+2025-05-21 21:33:44,804 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:33:44] "GET /api/articles HTTP/1.1" 200 -
+2025-05-21 21:34:56,247 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:34:56] "GET /api/articles HTTP/1.1" 200 -
+2025-05-21 21:34:56,262 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:34:56] "GET /api/articles HTTP/1.1" 200 -
+2025-05-21 21:36:11,308 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:36:11] "GET /api/articles HTTP/1.1" 200 -
+2025-05-21 21:36:11,325 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:36:11] "GET /api/articles HTTP/1.1" 200 -
+2025-05-21 21:37:18,377 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:37:18] "GET /api/articles HTTP/1.1" 200 -
+2025-05-21 21:37:18,384 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:37:18] "GET /api/articles HTTP/1.1" 200 -

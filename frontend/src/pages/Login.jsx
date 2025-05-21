@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import { API_URL } from '../api';
+import './Login.css';
 
 const Login = ({ onLogin }) => {
   const [credentials, setCredentials] = useState({
@@ -55,58 +57,122 @@ const Login = ({ onLogin }) => {
     }
   };
 
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: { 
+      opacity: 1,
+      transition: { 
+        duration: 0.6,
+        when: "beforeChildren",
+        staggerChildren: 0.2
+      }
+    }
+  };
+  
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: { 
+      y: 0, 
+      opacity: 1,
+      transition: { duration: 0.4 }
+    }
+  };
+
   return (
     <div className="login-page">
-      <div className="login-container">
-        <div className="login-header">
+      <motion.div 
+        className="login-container"
+        initial="hidden"
+        animate="visible"
+        variants={containerVariants}
+      >
+        <motion.div className="login-header" variants={itemVariants}>
           <h1>Admin Login</h1>
           <p>Bitte melden Sie sich an, um fortzufahren</p>
-        </div>
+        </motion.div>
 
-        <form className="login-form" onSubmit={handleSubmit}>
-          {error && <div className="error-message">{error}</div>}
+        <motion.form 
+          className="login-form" 
+          onSubmit={handleSubmit}
+          variants={itemVariants}
+        >
+          {error && (
+            <motion.div 
+              className="error-message"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              {error}
+            </motion.div>
+          )}
           
-          <div className="form-group">
+          <motion.div className="form-group" variants={itemVariants}>
             <label htmlFor="username">Benutzername</label>
-            <input
-              type="text"
-              id="username"
-              name="username"
-              value={credentials.username}
-              onChange={handleChange}
-              required
-              autoComplete="username"
-            />
-          </div>
+            <div className="input-container">
+              <input
+                type="text"
+                id="username"
+                name="username"
+                value={credentials.username}
+                onChange={handleChange}
+                required
+                autoComplete="username"
+              />
+              <motion.span 
+                className="input-focus-line"
+                initial={{ scaleX: 0 }}
+                whileFocus={{ scaleX: 1 }}
+                transition={{ duration: 0.3 }}
+              />
+            </div>
+          </motion.div>
           
-          <div className="form-group">
+          <motion.div className="form-group" variants={itemVariants}>
             <label htmlFor="password">Passwort</label>
-            <input
-              type="password"
-              id="password"
-              name="password"
-              value={credentials.password}
-              onChange={handleChange}
-              required
-              autoComplete="current-password"
-            />
-          </div>
+            <div className="input-container">
+              <input
+                type="password"
+                id="password"
+                name="password"
+                value={credentials.password}
+                onChange={handleChange}
+                required
+                autoComplete="current-password"
+              />
+              <motion.span 
+                className="input-focus-line"
+                initial={{ scaleX: 0 }}
+                whileFocus={{ scaleX: 1 }}
+                transition={{ duration: 0.3 }}
+              />
+            </div>
+          </motion.div>
           
-          <button 
+          <motion.button 
             type="submit" 
             className="login-button"
             disabled={isLoading}
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            variants={itemVariants}
           >
-            {isLoading ? 'Anmeldung läuft...' : 'Anmelden'}
-          </button>
-        </form>
+            {isLoading ? (
+              <div className="loading-spinner">
+                <div className="spinner"></div>
+                <span>Anmeldung läuft...</span>
+              </div>
+            ) : 'Anmelden'}
+          </motion.button>
+        </motion.form>
         
-        <div className="login-footer">
+        <motion.div className="login-footer" variants={itemVariants}>
           <Link to="/" className="back-to-home">
             Zurück zur Startseite
           </Link>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </div>
   );
 };
