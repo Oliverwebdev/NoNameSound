@@ -1,6 +1,10 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import { API_URL } from '../api';
+
+// CSS für die Landing-Komponente 
+import './Landing.css';
 
 const Landing = () => {
   const [featuredProducts, setFeaturedProducts] = useState([]);
@@ -28,53 +32,123 @@ const Landing = () => {
     fetchFeaturedProducts();
   }, []);
 
+  // Animation variants für framer-motion
+  const fadeIn = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.6 }
+    }
+  };
+
+  const staggerContainer = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2
+      }
+    }
+  };
+
   return (
     <div className="landing-page">
       <section className="hero">
-        <div className="hero-content">
-          <h1>Willkommen beim Musikverleih</h1>
-          <p>Qualitätsinstrumente und Equipment für jeden Anlass</p>
-          <Link to="/products" className="cta-button">
-            Produkte entdecken
-          </Link>
-        </div>
+        <div className="overlay"></div>
+        <motion.div 
+          className="hero-content"
+          initial="hidden"
+          animate="visible"
+          variants={staggerContainer}
+        >
+          <motion.div className="logo" variants={fadeIn}>
+            <span className="logo-part1">N<span className="logo-accent">oname</span></span>
+            <span className="logo-part2">S<span className="logo-accent">ound</span></span>
+          </motion.div>
+          <motion.h1 variants={fadeIn}>HANGTECHNIKA BÉRLÉS</motion.h1>
+          <motion.p variants={fadeIn}>Qualitätsinstrumente und Equipment für jeden Anlass</motion.p>
+          <motion.div variants={fadeIn}>
+            <Link to="/products" className="cta-button pulse">
+              Produkte entdecken
+            </Link>
+          </motion.div>
+          <motion.div className="qr-section" variants={fadeIn}>
+            <p>Termékeinkhez<br/>Olvassa be a QR Kódot!</p>
+          </motion.div>
+        </motion.div>
       </section>
 
-      <section className="features">
+      <motion.section 
+        className="services"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={staggerContainer}
+      >
         <div className="container">
-          <h2>Warum uns wählen?</h2>
-          <div className="features-grid">
-            <div className="feature-item">
-              <div className="feature-icon">🎵</div>
-              <h3>Hochwertige Instrumente</h3>
-              <p>Unsere Instrumente sind von höchster Qualität und werden regelmäßig gewartet.</p>
-            </div>
-            <div className="feature-item">
-              <div className="feature-icon">💰</div>
-              <h3>Faire Preise</h3>
-              <p>Wir bieten faire Mietpreise für verschiedene Zeiträume.</p>
-            </div>
-            <div className="feature-item">
-              <div className="feature-icon">🚚</div>
-              <h3>Flexible Abholung</h3>
-              <p>Wir organisieren die Abholung und Rückgabe nach Ihren Wünschen.</p>
-            </div>
-          </div>
+          <motion.h2 variants={fadeIn}>BÁROK / KLUBOK / ESKÜVŐK</motion.h2>
+          <motion.h3 variants={fadeIn}>SZÜLETÉSNAPOK / RENDEZVÉNYEK</motion.h3>
+          
+          <motion.div className="services-grid" variants={staggerContainer}>
+            <motion.div className="service-item" variants={fadeIn}>
+              <div className="service-icon">
+                <span className="highlight">PROFI SZAKÉRTELEM</span>
+              </div>
+            </motion.div>
+            <motion.div className="service-item" variants={fadeIn}>
+              <div className="service-icon">
+                <span className="highlight">GYORS TELEPÍTÉS</span>
+              </div>
+            </motion.div>
+            <motion.div className="service-item" variants={fadeIn}>
+              <div className="service-icon">
+                <span className="highlight">MEGFIZETHETŐ ÁR</span>
+              </div>
+            </motion.div>
+          </motion.div>
+          
+          <motion.div className="delivery-highlight" variants={fadeIn}>
+            <h3>BUDAPEST TERÜLETÉN <span className="highlight">INGYENES</span> KISZÁLLÁS!</h3>
+          </motion.div>
+          
+          <motion.div className="motto" variants={fadeIn}>
+            "SZÓLJON, HOGY MINŐSÉG SZOLJON!"
+          </motion.div>
+          
+          <motion.div className="contact-info" variants={fadeIn}>
+            <p>+36 30 994 3215 / nonamesound0@gmail.com</p>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
-      <section className="featured-products">
+      <motion.section 
+        className="featured-products"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={staggerContainer}
+      >
         <div className="container">
-          <h2>Ausgewählte Produkte</h2>
+          <motion.h2 variants={fadeIn}>Ausgewählte Produkte</motion.h2>
           
           {isLoading ? (
-            <div className="loading">Produkte werden geladen...</div>
+            <div className="loading">
+              <div className="loading-spinner"></div>
+              <p>Produkte werden geladen...</p>
+            </div>
           ) : featuredProducts.length > 0 ? (
-            <div className="products-grid">
-              {featuredProducts.map((product) => (
-                <div key={product.id} className="product-card">
+            <motion.div className="products-grid" variants={staggerContainer}>
+              {featuredProducts.map((product, index) => (
+                <motion.div 
+                  key={product.id} 
+                  className="product-card"
+                  variants={fadeIn}
+                  whileHover={{ scale: 1.03, transition: { duration: 0.3 } }}
+                >
                   <div className="product-image">
                     <img src={product.image_url || '/placeholder-instrument.jpg'} alt={product.name} />
+                    <div className="product-overlay"></div>
                   </div>
                   <div className="product-info">
                     <h3>{product.name}</h3>
@@ -83,30 +157,39 @@ const Landing = () => {
                       Details ansehen
                     </Link>
                   </div>
-                </div>
+                </motion.div>
               ))}
-            </div>
+            </motion.div>
           ) : (
-            <p>Keine Produkte gefunden.</p>
+            <motion.p variants={fadeIn}>Keine Produkte gefunden.</motion.p>
           )}
           
-          <div className="view-all">
+          <motion.div className="view-all" variants={fadeIn}>
             <Link to="/products" className="view-all-link">
               Alle Produkte ansehen
+              <span className="arrow">→</span>
             </Link>
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
-      <section className="cta-section">
+      <motion.section 
+        className="cta-section"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={staggerContainer}
+      >
         <div className="container">
-          <h2>Bereit, Musik zu machen?</h2>
-          <p>Kontaktieren Sie uns noch heute, um die perfekten Instrumente für Ihr nächstes Event zu finden.</p>
-          <Link to="/contact" className="cta-button">
-            Kontakt aufnehmen
-          </Link>
+          <motion.h2 variants={fadeIn}>Bereit, Musik zu machen?</motion.h2>
+          <motion.p variants={fadeIn}>Kontaktieren Sie uns noch heute, um die perfekten Instrumente für Ihr nächstes Event zu finden.</motion.p>
+          <motion.div variants={fadeIn}>
+            <Link to="/contact" className="cta-button pulse">
+              Kontakt aufnehmen
+            </Link>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
     </div>
   );
 };

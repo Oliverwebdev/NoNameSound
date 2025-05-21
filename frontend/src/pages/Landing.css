@@ -1,0 +1,463 @@
+/* Landing.css */
+:root {
+  --primary-color: #7c4dff;
+  --secondary-color: #ff7043;
+  --warm-accent: #ffab40;
+  --dark-bg: #121212;
+  --dark-surface: #1e1e1e;
+  --light-text: #f5f5f5;
+  --semi-transparent: rgba(0, 0, 0, 0.7);
+}
+
+.landing-page {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--light-text);
+  background-color: var(--dark-bg);
+  overflow-x: hidden;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-image: url('/images/music-equipment-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  overflow: hidden;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(124, 77, 255, 0.8) 0%, rgba(18, 18, 18, 0.9) 100%);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 2rem;
+}
+
+.logo {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo-part1, .logo-part2 {
+  display: block;
+}
+
+.logo-part1 {
+  margin-right: 5px;
+}
+
+.logo-accent {
+  font-weight: 400;
+}
+
+.logo-part1 {
+  color: white;
+}
+
+.logo-part1 .logo-accent {
+  color: var(--secondary-color);
+}
+
+.logo-part2 {
+  color: white;
+  border-bottom: 2px solid var(--secondary-color);
+  padding-bottom: 0.2rem;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin: 1rem 0;
+  letter-spacing: 2px;
+  background: linear-gradient(90deg, #fff, var(--secondary-color));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 10px rgba(255, 112, 67, 0.3);
+}
+
+.hero p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.qr-section {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.qr-code {
+  margin-bottom: 1rem;
+  background: white;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.qr-code img {
+  width: 150px;
+  height: 150px;
+}
+
+/* Services Section */
+.services {
+  padding: 5rem 0;
+  background-color: var(--dark-surface);
+  text-align: center;
+}
+
+.services h2, .services h3 {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+}
+
+.services-grid {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 3rem 0;
+  flex-wrap: wrap;
+}
+
+.service-item {
+  flex: 1;
+  min-width: 250px;
+}
+
+.service-icon {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.highlight {
+  color: var(--secondary-color);
+  font-weight: 700;
+}
+
+.delivery-highlight {
+  margin: 3rem 0;
+}
+
+.delivery-highlight h3 {
+  font-size: 1.8rem;
+  line-height: 1.4;
+}
+
+.motto {
+  font-style: italic;
+  font-size: 1.5rem;
+  margin: 3rem 0;
+  opacity: 0.8;
+}
+
+.contact-info {
+  margin-top: 3rem;
+  font-size: 1.2rem;
+}
+
+/* Featured Products */
+.featured-products {
+  padding: 5rem 0;
+  background: linear-gradient(to bottom, var(--dark-bg), var(--dark-surface));
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.featured-products h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 2.5rem;
+  color: white;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.product-card {
+  background: rgba(30, 30, 30, 0.8);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-image {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.product-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+}
+
+.product-card:hover .product-image img {
+  transform: scale(1.1);
+}
+
+.product-info {
+  padding: 1.5rem;
+}
+
+.product-info h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.5rem;
+}
+
+.price {
+  color: var(--warm-accent);
+  font-weight: 600;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.view-details {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.view-details:hover {
+  background-color: var(--warm-accent);
+  transform: translateY(-2px);
+}
+
+.view-all {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.view-all-link {
+  display: inline-flex;
+  align-items: center;
+  color: var(--warm-accent);
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.view-all-link:hover {
+  color: var(--secondary-color);
+}
+
+.arrow {
+  margin-left: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.view-all-link:hover .arrow {
+  transform: translateX(5px);
+}
+
+/* CTA Section */
+.cta-section {
+  padding: 7rem 0;
+  background: linear-gradient(135deg, rgba(124, 77, 255, 0.9) 0%, rgba(18, 18, 18, 0.95) 100%), url('/images/music-stage-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+}
+
+.cta-section h2 {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.cta-section p {
+  font-size: 1.3rem;
+  max-width: 700px;
+  margin: 0 auto 2.5rem;
+  opacity: 0.9;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 112, 67, 0.4);
+}
+
+.cta-button:hover {
+  background-color: var(--warm-accent);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(255, 171, 64, 0.5);
+}
+
+/* Loading spinner */
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgba(124, 77, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: var(--primary-color);
+  animation: spin 1s infinite linear;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Pulse animation for buttons */
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 112, 67, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(255, 112, 67, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 112, 67, 0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .hero h1 {
+    font-size: 3.5rem;
+  }
+  
+  .services-grid {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.8rem;
+  }
+  
+  .hero p {
+    font-size: 1.2rem;
+  }
+  
+  .logo {
+    font-size: 2.5rem;
+  }
+  
+  .services-grid {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .delivery-highlight h3 {
+    font-size: 1.5rem;
+  }
+  
+  .motto {
+    font-size: 1.3rem;
+  }
+  
+  .cta-section h2 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    min-height: 500px;
+  }
+  
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+  
+  .logo {
+    font-size: 2rem;
+  }
+  
+  .qr-code img {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .featured-products h2 {
+    font-size: 2rem;
+  }
+  
+  .cta-section {
+    padding: 5rem 0;
+  }
+  
+  .cta-section h2 {
+    font-size: 2rem;
+  }
+  
+  .cta-section p {
+    font-size: 1.1rem;
+  }
+  
+  .cta-button {
+    padding: 0.8rem 2rem;
+    font-size: 1.1rem;
+  }
+}
