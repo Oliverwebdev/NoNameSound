@@ -458,7 +458,16 @@ def delete_article(article_id):
     
     return jsonify({"message": "Artikel erfolgreich gelöscht"}), 200
 
+# Health Check
+@app.route("/healthz")
+def healthz():
+    return "OK", 200
+
+
+
+
 # Mietanfragen
+
 @app.route('/api/rentals/request', methods=['POST'])
 def create_rental_request():
     """Neue Mietanfrage erstellen"""
