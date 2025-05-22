@@ -1,8 +1,13 @@
-create navbar and footer
+next steps
 
-connect back and front
 
-time for some styling :D
+Daten einfügen Navbar + footer
+
+N18I
+
+
+-------------------------------------------------------
+
 
 
 style vorgabe für das gesamte frontend: 
