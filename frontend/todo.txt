@@ -16,4 +16,4 @@ Warme Orange-Töne (var(--secondary-color):
 #ff7043) als Akzentfarbe
 Gemütliches Bernstein (var(--warm-accent): 
 #ffab40) für Hover-Effekte
-Elegante dunkle Hintergründe mit subtilen Farbverläufen, natürlich ist es auch wichtig das diese auch full responsive ist. es soll auf jedem gerät gut anzusehen sein und user freundlich. gib ihm gerne kann man auch die ein oder andere passende animation einbauen mit framer motion, das das ganze auch noch ein wenig lebendiger wirkt auf allen geräten, css ist im gleichen verzeichnis wie die componente daher bitte css und kein tailwind.
+Elegante dunkle Hintergründe mit subtilen Farbverläufen, natürlich ist es auch wichtig das diese auch full responsive ist. es soll auf jedem gerät gut anzusehen sein und user freundlich. gib ihm gerne kann man auch die ein oder andere passende animation einbauen mit framer motion, das das ganze auch noch ein wenig lebendiger wirkt auf allen geräten, css ist im gleichen verzeichnis wie die componente daher bitte css und kein tailwind. noch dazu mühe geben das ist nicht nur irgendein product

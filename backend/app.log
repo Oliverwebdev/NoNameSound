@@ -454,3 +454,95 @@
 2025-05-22 21:46:31,335 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 21:46:31] "GET /api/stats HTTP/1.1" 200 -
 2025-05-22 21:46:31,340 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 21:46:31] "GET /api/rentals HTTP/1.1" 200 -
 2025-05-22 21:46:31,355 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 21:46:31] "GET /api/rentals HTTP/1.1" 200 -
+2025-05-22 21:47:44,001 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.190:5000
+2025-05-22 21:47:44,001 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-22 21:47:44,002 - werkzeug - INFO -  * Restarting with stat
+2025-05-22 21:47:44,377 - werkzeug - WARNING -  * Debugger is active!
+2025-05-22 21:47:44,378 - werkzeug - INFO -  * Debugger PIN: 844-228-100
+2025-05-22 21:53:53,185 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 21:53:53] "GET /api/stats HTTP/1.1" 200 -
+2025-05-22 21:54:08,194 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 21:54:08] "GET /api/stats HTTP/1.1" 200 -
+2025-05-22 21:54:09,620 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 21:54:09] "GET /api/articles HTTP/1.1" 200 -
+2025-05-22 21:54:09,636 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 21:54:09] "GET /api/stats HTTP/1.1" 200 -
+2025-05-22 21:54:09,645 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 21:54:09] "GET /api/articles HTTP/1.1" 200 -
+2025-05-22 21:54:28,815 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 21:54:28] "GET /api/rentals HTTP/1.1" 200 -
+2025-05-22 21:54:28,818 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 21:54:28] "GET /api/stats HTTP/1.1" 200 -
+2025-05-22 21:54:28,830 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 21:54:28] "GET /api/rentals HTTP/1.1" 200 -
+2025-05-22 21:54:29,636 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 21:54:29] "GET /api/stats HTTP/1.1" 200 -
+2025-05-22 21:57:42,263 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 21:57:42] "GET /api/articles HTTP/1.1" 200 -
+2025-05-22 21:57:42,273 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 21:57:42] "GET /api/articles HTTP/1.1" 200 -
+2025-05-22 21:58:04,515 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 21:58:04] "GET /api/articles?featured=true HTTP/1.1" 200 -
+2025-05-22 21:58:04,528 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 21:58:04] "GET /api/articles?featured=true HTTP/1.1" 200 -
+2025-05-22 21:58:16,769 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 21:58:16] "GET /api/stats HTTP/1.1" 200 -
+2025-05-22 21:58:16,782 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 21:58:16] "GET /api/stats HTTP/1.1" 200 -
+2025-05-22 21:58:21,489 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 21:58:21] "GET /api/articles HTTP/1.1" 200 -
+2025-05-22 21:58:21,494 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 21:58:21] "GET /api/stats HTTP/1.1" 200 -
+2025-05-22 21:58:21,506 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 21:58:21] "GET /api/articles HTTP/1.1" 200 -
+2025-05-22 21:58:24,540 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 21:58:24] "GET /api/rentals HTTP/1.1" 200 -
+2025-05-22 21:58:24,541 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 21:58:24] "GET /api/stats HTTP/1.1" 200 -
+2025-05-22 21:58:24,553 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 21:58:24] "GET /api/rentals HTTP/1.1" 200 -
+2025-05-22 21:58:26,994 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 21:58:26] "GET /api/stats HTTP/1.1" 200 -
+2025-05-22 21:58:32,194 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 21:58:32] "GET /api/rentals HTTP/1.1" 200 -
+2025-05-22 21:58:32,199 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 21:58:32] "GET /api/stats HTTP/1.1" 200 -
+2025-05-22 21:58:32,213 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 21:58:32] "GET /api/rentals HTTP/1.1" 200 -
+2025-05-22 22:10:34,802 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.46:5000
+2025-05-22 22:10:34,803 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-22 22:10:34,806 - werkzeug - INFO -  * Restarting with stat
+2025-05-22 22:10:35,247 - werkzeug - WARNING -  * Debugger is active!
+2025-05-22 22:10:35,249 - werkzeug - INFO -  * Debugger PIN: 462-247-958
+2025-05-22 22:10:59,689 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 22:10:59] "GET /api/articles HTTP/1.1" 200 -
+2025-05-22 22:10:59,715 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 22:10:59] "GET /api/articles HTTP/1.1" 200 -
+2025-05-22 22:11:00,850 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 22:11:00] "GET /api/stats HTTP/1.1" 200 -
+2025-05-22 22:11:00,867 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 22:11:00] "GET /api/stats HTTP/1.1" 200 -
+2025-05-22 22:11:07,655 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 22:11:07] "GET /api/rentals HTTP/1.1" 200 -
+2025-05-22 22:11:07,658 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 22:11:07] "GET /api/stats HTTP/1.1" 200 -
+2025-05-22 22:11:07,674 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 22:11:07] "GET /api/rentals HTTP/1.1" 200 -
+2025-05-22 22:11:09,406 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 22:11:09] "GET /api/stats HTTP/1.1" 200 -
+2025-05-22 22:11:11,321 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 22:11:11] "GET /api/stats HTTP/1.1" 200 -
+2025-05-22 22:11:13,546 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 22:11:13] "GET /api/stats HTTP/1.1" 200 -
+2025-05-22 22:11:39,732 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 22:11:39] "GET /api/stats HTTP/1.1" 200 -
+2025-05-22 22:11:41,651 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 22:11:41] "GET /api/rentals HTTP/1.1" 200 -
+2025-05-22 22:11:41,655 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 22:11:41] "GET /api/stats HTTP/1.1" 200 -
+2025-05-22 22:11:41,665 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 22:11:41] "GET /api/rentals HTTP/1.1" 200 -
+2025-05-22 22:11:43,931 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 22:11:43] "GET /api/stats HTTP/1.1" 200 -
+2025-05-22 22:11:45,181 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 22:11:45] "GET /api/stats HTTP/1.1" 200 -
+2025-05-22 22:11:49,516 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 22:11:49] "GET /api/stats HTTP/1.1" 200 -
+2025-05-22 22:11:49,518 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 22:11:49] "GET /api/rentals HTTP/1.1" 200 -
+2025-05-22 22:11:49,535 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 22:11:49] "GET /api/rentals HTTP/1.1" 200 -
+2025-05-22 22:12:14,396 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 22:12:14] "GET /api/stats HTTP/1.1" 200 -
+2025-05-22 22:12:15,599 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 22:12:15] "GET /api/rentals HTTP/1.1" 200 -
+2025-05-22 22:12:15,603 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 22:12:15] "GET /api/stats HTTP/1.1" 200 -
+2025-05-22 22:12:15,617 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 22:12:15] "GET /api/rentals HTTP/1.1" 200 -
+2025-05-22 22:12:20,151 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 22:12:20] "GET /api/stats HTTP/1.1" 200 -
+2025-05-22 22:12:21,795 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 22:12:21] "GET /api/stats HTTP/1.1" 200 -
+2025-05-22 22:12:23,340 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 22:12:23] "GET /api/rentals HTTP/1.1" 200 -
+2025-05-22 22:12:23,349 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 22:12:23] "GET /api/stats HTTP/1.1" 200 -
+2025-05-22 22:12:23,361 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 22:12:23] "GET /api/rentals HTTP/1.1" 200 -
+2025-05-22 22:12:24,336 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 22:12:24] "GET /api/stats HTTP/1.1" 200 -
+2025-05-22 22:12:26,218 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 22:12:26] "GET /api/stats HTTP/1.1" 200 -
+2025-05-22 22:16:14,792 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 22:16:14] "GET /api/stats HTTP/1.1" 200 -
+2025-05-22 22:16:30,453 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 22:16:30] "GET /api/stats HTTP/1.1" 200 -
+2025-05-22 22:16:31,858 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 22:16:31] "GET /api/rentals HTTP/1.1" 200 -
+2025-05-22 22:16:31,860 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 22:16:31] "GET /api/stats HTTP/1.1" 200 -
+2025-05-22 22:16:31,870 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 22:16:31] "GET /api/rentals HTTP/1.1" 200 -
+2025-05-22 22:16:40,145 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 22:16:40] "GET /api/stats HTTP/1.1" 200 -
+2025-05-22 22:16:41,892 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 22:16:41] "GET /api/stats HTTP/1.1" 200 -
+2025-05-22 22:16:50,113 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 22:16:50] "GET /api/stats HTTP/1.1" 200 -
+2025-05-22 22:16:52,281 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 22:16:52] "GET /api/stats HTTP/1.1" 200 -
+2025-05-22 22:16:54,215 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 22:16:54] "GET /api/rentals HTTP/1.1" 200 -
+2025-05-22 22:16:54,220 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 22:16:54] "GET /api/stats HTTP/1.1" 200 -
+2025-05-22 22:16:54,232 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 22:16:54] "GET /api/rentals HTTP/1.1" 200 -
+2025-05-22 22:20:49,259 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 22:20:49] "GET /api/stats HTTP/1.1" 200 -
+2025-05-22 22:20:52,655 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 22:20:52] "GET /api/stats HTTP/1.1" 200 -
+2025-05-22 22:20:59,845 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 22:20:59] "GET /api/stats HTTP/1.1" 200 -
+2025-05-22 22:21:00,828 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 22:21:00] "GET /api/stats HTTP/1.1" 200 -
+2025-05-22 22:21:37,632 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 22:21:37] "GET /api/stats HTTP/1.1" 200 -
+2025-05-22 22:21:38,588 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 22:21:38] "GET /api/rentals HTTP/1.1" 200 -
+2025-05-22 22:21:38,594 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 22:21:38] "GET /api/stats HTTP/1.1" 200 -
+2025-05-22 22:21:38,618 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 22:21:38] "GET /api/rentals HTTP/1.1" 200 -
+2025-05-22 22:21:39,602 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 22:21:39] "GET /api/stats HTTP/1.1" 200 -
