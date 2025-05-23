@@ -11,16 +11,13 @@ const Landing = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Fetch featured products from API
     const fetchFeaturedProducts = async () => {
       try {
         const response = await fetch(`${API_URL}/articles?featured=true`);
-
         if (!response.ok) {
           throw new Error('Failed to fetch');
         }
         const data = await response.json();
-        // We'll take the first 3 products as featured
         setFeaturedProducts(data.slice(0, 3));
       } catch (error) {
         console.error('Error fetching products:', error);
@@ -32,7 +29,6 @@ const Landing = () => {
     fetchFeaturedProducts();
   }, []);
 
-  // Animation variants für framer-motion
   const fadeIn = {
     hidden: { opacity: 0, y: 20 },
     visible: { 
@@ -67,10 +63,10 @@ const Landing = () => {
             <span className="logo-part2">S<span className="logo-accent">ound</span></span>
           </motion.div>
           <motion.h1 variants={fadeIn}>HANGTECHNIKA BÉRLÉS</motion.h1>
-          <motion.p variants={fadeIn}>Qualitätsinstrumente und Equipment für jeden Anlass</motion.p>
+          <motion.p variants={fadeIn}>Minőségi hangszerek és felszerelések minden alkalomra</motion.p>
           <motion.div variants={fadeIn}>
             <Link to="/products" className="cta-button pulse">
-              Produkte entdecken
+              Fedezze fel termékeinket
             </Link>
           </motion.div>
           <motion.div className="qr-section" variants={fadeIn}>
@@ -130,12 +126,12 @@ const Landing = () => {
         variants={staggerContainer}
       >
         <div className="container">
-          <motion.h2 variants={fadeIn}>Ausgewählte Produkte</motion.h2>
+          <motion.h2 variants={fadeIn}>Kiemelt termékeink</motion.h2>
           
           {isLoading ? (
             <div className="loading">
               <div className="loading-spinner"></div>
-              <p>Produkte werden geladen...</p>
+              <p>A termékek betöltése folyamatban...</p>
             </div>
           ) : featuredProducts.length > 0 ? (
             <motion.div className="products-grid" variants={staggerContainer}>
@@ -152,21 +148,21 @@ const Landing = () => {
                   </div>
                   <div className="product-info">
                     <h3>{product.name}</h3>
-                    <p className="price">{product.price_per_day} € pro Tag</p>
+                    <p className="price">{product.price_per_day} €</p>
                     <Link to={`/products/${product.id}`} className="view-details">
-                      Details ansehen
+                      Részletek megtekintése
                     </Link>
                   </div>
                 </motion.div>
               ))}
             </motion.div>
           ) : (
-            <motion.p variants={fadeIn}>Keine Produkte gefunden.</motion.p>
+            <motion.p variants={fadeIn}>Nem található termék.</motion.p>
           )}
           
           <motion.div className="view-all" variants={fadeIn}>
             <Link to="/products" className="view-all-link">
-              Alle Produkte ansehen
+              Összes termék megtekintése
               <span className="arrow">→</span>
             </Link>
           </motion.div>
@@ -181,11 +177,11 @@ const Landing = () => {
         variants={staggerContainer}
       >
         <div className="container">
-          <motion.h2 variants={fadeIn}>Bereit, Musik zu machen?</motion.h2>
-          <motion.p variants={fadeIn}>Kontaktieren Sie uns noch heute, um die perfekten Instrumente für Ihr nächstes Event zu finden.</motion.p>
+          <motion.h2 variants={fadeIn}>Készen áll zenélni?</motion.h2>
+          <motion.p variants={fadeIn}>Lépjen kapcsolatba velünk még ma, hogy megtalálja a tökéletes hangszereket a következő rendezvényéhez.</motion.p>
           <motion.div variants={fadeIn}>
             <Link to="/contact" className="cta-button pulse">
-              Kontakt aufnehmen
+              Kapcsolatfelvétel
             </Link>
           </motion.div>
         </div>

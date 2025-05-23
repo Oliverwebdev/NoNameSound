@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import './Products.css'; // Wir werden eine separate CSS-Datei erstellen
+import './Products.css';
 
 const Products = () => {
   const [products, setProducts] = useState([]);
@@ -11,22 +11,19 @@ const Products = () => {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
 
   useEffect(() => {
-    // Fetch products from API
     const fetchProducts = async () => {
       try {
         setIsLoading(true);
         const response = await fetch('/api/articles');
-        
         if (!response.ok) {
           throw new Error('Failed to fetch products');
         }
-        
         const data = await response.json();
         setProducts(data);
         setError(null);
       } catch (error) {
         console.error('Error fetching products:', error);
-        setError('Fehler beim Laden der Produkte. Bitte versuchen Sie es später erneut.');
+        setError('Hiba a termékek betöltésekor. Kérjük, próbálja meg később újra.');
       } finally {
         setIsLoading(false);
       }
@@ -35,11 +32,9 @@ const Products = () => {
     fetchProducts();
   }, []);
 
-  // Filter products based on search term and availability filter
   const filteredProducts = products.filter((product) => {
     const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase()) || 
                          (product.description && product.description.toLowerCase().includes(searchTerm.toLowerCase()));
-    
     if (filter === 'all') {
       return matchesSearch;
     } else if (filter === 'available') {
@@ -65,51 +60,51 @@ const Products = () => {
     <div className="products-page">
       <div className="gradient-background"></div>
       <div className="container">
-        <h1 className="page-title">Unsere Produkte</h1>
-        
+        <h1 className="page-title">Termékeink</h1>
+
         <div className="products-filters">
           <div className="search-box">
             <input
               type="text"
-              placeholder="Produkt suchen..."
+              placeholder="Keresés..."
               value={searchTerm}
               onChange={handleSearchChange}
               className="search-input"
             />
             <span className="search-icon">🔍</span>
           </div>
-          
+
           <div className="filter-container">
             <button 
               className="filter-toggle" 
               onClick={toggleFilterMenu}
               aria-expanded={isFilterOpen}
             >
-              Filter {isFilterOpen ? '▲' : '▼'}
+              Szűrő {isFilterOpen ? '▲' : '▼'}
             </button>
-            
+
             <div className={`filter-dropdown ${isFilterOpen ? 'open' : ''}`}>
               <div className="filter-selector">
-                <label htmlFor="availability-filter">Verfügbarkeit:</label>
+                <label htmlFor="availability-filter">Elérhetőség:</label>
                 <select 
                   id="availability-filter" 
                   value={filter} 
                   onChange={handleFilterChange}
                   className="filter-select"
                 >
-                  <option value="all">Alle Produkte</option>
-                  <option value="available">Nur verfügbare</option>
-                  <option value="unavailable">Nur nicht verfügbare</option>
+                  <option value="all">Összes termék</option>
+                  <option value="available">Csak elérhető</option>
+                  <option value="unavailable">Csak nem elérhető</option>
                 </select>
               </div>
             </div>
           </div>
         </div>
-        
+
         {isLoading ? (
           <div className="loading-container">
             <div className="loading-spinner"></div>
-            <p>Produkte werden geladen...</p>
+            <p>A termékek betöltése folyamatban...</p>
           </div>
         ) : error ? (
           <div className="error-message">
@@ -117,7 +112,7 @@ const Products = () => {
           </div>
         ) : filteredProducts.length === 0 ? (
           <div className="no-products">
-            <p>Keine Produkte gefunden.</p>
+            <p>Nincs találat.</p>
           </div>
         ) : (
           <div className="products-grid">
@@ -131,38 +126,37 @@ const Products = () => {
                   />
                   {(!product.is_available || product.quantity_available === 0) && (
                     <div className="unavailable-badge">
-                      Nicht verfügbar
+                      Nem elérhető
                     </div>
                   )}
                 </div>
-                
+
                 <div className="product-details">
                   <h3 className="product-title">{product.name}</h3>
-                  <p className="price">{product.price_per_day} € pro Tag</p>
-                  
+                  <p className="price">{product.price_per_day}&nbsp;€</p>
+
                   {product.description && (
                     <p className="description">{product.description.length > 100 
                       ? `${product.description.substring(0, 100)}...` 
                       : product.description}
                     </p>
                   )}
-                  
+
                   <div className="product-actions">
                     <button 
                       className={`rent-button ${!product.is_available || product.quantity_available === 0 ? 'disabled' : ''}`}
                       disabled={!product.is_available || product.quantity_available === 0}
                       onClick={() => {
-                        // This would typically add the product to a rental cart or similar
-                        alert(`${product.name} zur Anfrage hinzugefügt`);
+                        alert(`${product.name} hozzáadva a kéréshez`);
                       }}
                     >
                       {product.is_available && product.quantity_available > 0 
-                        ? 'Anfragen' 
-                        : 'Nicht verfügbar'}
+                        ? 'Kérje most' 
+                        : 'Nem elérhető'}
                     </button>
-                    
+
                     <Link to={`/products/${product.id}`} className="details-link">
-                      Details
+                      Részletek
                     </Link>
                   </div>
                 </div>
