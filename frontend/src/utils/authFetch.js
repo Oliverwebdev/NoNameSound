@@ -9,10 +9,11 @@ import { API_URL } from '../api';
  * @returns {Promise<Response>}
  */
 export async function authFetch(url, options = {}) {
-  const response = await fetch(API_URL + url, {
+  const fullUrl = API_URL + (url.startsWith('/') ? url : '/' + url);
+  console.log('[authFetch]', fullUrl, options); // optional: entfernen für Produktion
+  const response = await fetch(fullUrl, {
     ...options,
     credentials: 'include', // Cookie wird mitgeschickt!
   });
   return response;
 }
-

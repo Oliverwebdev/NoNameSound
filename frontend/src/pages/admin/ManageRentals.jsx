@@ -3,6 +3,17 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { authFetch } from '../../utils/authFetch';
 import './ManageRentals.css';
 
+
+function formatDate(dateString) {
+  const date = new Date(dateString);
+  return date.toLocaleDateString('de-DE', {
+    weekday: 'short',
+    day: '2-digit',
+    month: 'long',
+    year: 'numeric'
+  });
+}
+
 function ManageRentals() {
   const [requests, setRequests] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -14,7 +25,7 @@ function ManageRentals() {
       setError(null);
 
       try {
-        const res = await authFetch('/api/rentals');
+        const res = await authFetch('/rentals');
         if (res.status === 401 || res.status === 403) {
           setError('Nicht autorisiert. Bitte erneut einloggen.');
           setIsLoading(false);
@@ -230,7 +241,8 @@ function ManageRentals() {
                           whileHover={{ scale: 1.05 }}
                           transition={{ duration: 0.2 }}
                         >
-                          {req.start_date} – {req.end_date}
+                          {formatDate(req.start_date)} – {formatDate(req.end_date)}
+
                         </motion.span>
                       </td>
                       <td>

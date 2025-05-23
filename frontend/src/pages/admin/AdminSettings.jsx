@@ -20,7 +20,7 @@ function AdminSettings() {
     setIsLoading(true);
     
     try {
-      const res = await authFetch('/api/auth/change-password', {
+      const res = await authFetch('/auth/change-password', {
         method: 'PUT',
         body: JSON.stringify({
           current_password: currentPassword,
