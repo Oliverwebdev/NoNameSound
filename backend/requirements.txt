@@ -3,3 +3,4 @@ flask-cors>=3.0
 flask-jwt-extended>=4.0
 Werkzeug>=2.0
 PyJWT>=2.0
+dotenv>=0.19

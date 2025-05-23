@@ -715,3 +715,5 @@
 2025-05-23 13:18:18,852 - werkzeug - INFO - 127.0.0.1 - - [23/May/2025 13:18:18] "GET /api/rentals HTTP/1.1" 200 -
 2025-05-23 13:18:18,853 - werkzeug - INFO - 127.0.0.1 - - [23/May/2025 13:18:18] "GET /api/stats HTTP/1.1" 200 -
 2025-05-23 13:18:18,868 - werkzeug - INFO - 127.0.0.1 - - [23/May/2025 13:18:18] "GET /api/rentals HTTP/1.1" 200 -
+2025-05-23 13:23:16,923 - werkzeug - INFO - 127.0.0.1 - - [23/May/2025 13:23:16] "OPTIONS /api/articles?featured=true HTTP/1.1" 200 -
+2025-05-23 13:23:16,939 - werkzeug - INFO - 127.0.0.1 - - [23/May/2025 13:23:16] "GET /api/articles?featured=true HTTP/1.1" 200 -
