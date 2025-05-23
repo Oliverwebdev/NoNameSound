@@ -15,6 +15,8 @@ function Navbar({ isAuthenticated, onLogout }) {
           <Link to="/">Főoldal</Link>
           <Link to="/products">Termékek</Link>
           <Link to="/contact">Kapcsolat</Link>
+          <Link to="/cart">🛒 Warenkorb</Link>
+
 
           {isAuthenticated ? (
             <>

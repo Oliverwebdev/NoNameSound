@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate, Link } from 'react-router-dom';
 import './App.css';
+import { CartProvider } from './context/CartContext'; // oben
 
 // Pages
 import Landing from './pages/Landing';
@@ -9,6 +10,8 @@ import Products from './pages/Products';
 import Login from './pages/Login';
 import AdminDashboard from './pages/AdminDashboard';
 import NotFound from './pages/NotFound';
+import Cart from './pages/Cart'; // Import
+
 
 // Layout components
 import Navbar from './components/Navbar';
@@ -54,6 +57,8 @@ function App() {
   };
 
   return (
+
+    <CartProvider>
     <Router>
       <div className="app-container">
         <Navbar isAuthenticated={isAuthenticated} onLogout={handleLogout} />
@@ -63,6 +68,8 @@ function App() {
             <Route path="/" element={<Landing />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/products" element={<Products />} />
+            <Route path="/cart" element={<Cart />} />
+
             <Route 
               path="/login" 
               element={
@@ -86,6 +93,7 @@ function App() {
         <Footer />
       </div>
     </Router>
+    </CartProvider>
   );
 }
 

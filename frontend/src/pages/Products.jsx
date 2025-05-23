@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Products.css';
+import { useCart } from '../context/CartContext';
+
 
 const Products = () => {
   const [products, setProducts] = useState([]);
@@ -9,6 +11,9 @@ const Products = () => {
   const [filter, setFilter] = useState('all');
   const [searchTerm, setSearchTerm] = useState('');
   const [isFilterOpen, setIsFilterOpen] = useState(false);
+  const { addToCart } = useCart();
+
+  
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -144,15 +149,11 @@ const Products = () => {
 
                   <div className="product-actions">
                     <button 
-                      className={`rent-button ${!product.is_available || product.quantity_available === 0 ? 'disabled' : ''}`}
+                      className="add-to-cart-button" 
+                      onClick={() => addToCart(product)}
                       disabled={!product.is_available || product.quantity_available === 0}
-                      onClick={() => {
-                        alert(`${product.name} hozzáadva a kéréshez`);
-                      }}
                     >
-                      {product.is_available && product.quantity_available > 0 
-                        ? 'Kérje most' 
-                        : 'Nem elérhető'}
+                      {product.is_available && product.quantity_available > 0 ? 'Kosárba' : 'Nem elérhető'}
                     </button>
 
                     <Link to={`/products/${product.id}`} className="details-link">
