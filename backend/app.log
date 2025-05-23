@@ -748,3 +748,17 @@
 2025-05-23 13:43:12,547 - werkzeug - INFO - 127.0.0.1 - - [23/May/2025 13:43:12] "[31m[1mOPTIONS /api/auth/login HTTP/1.1[0m" 429 -
 2025-05-23 13:45:22,876 - werkzeug - INFO -  * Detected change in '/home/oliver/Desktop/NoNameSound/backend/app.py', reloading
 2025-05-23 13:45:22,942 - werkzeug - INFO -  * Restarting with stat
+2025-05-23 13:57:18,468 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.46:5000
+2025-05-23 13:57:18,468 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-23 13:57:18,468 - werkzeug - INFO -  * Restarting with stat
+2025-05-23 13:57:18,677 - werkzeug - WARNING -  * Debugger is active!
+2025-05-23 13:57:18,678 - werkzeug - INFO -  * Debugger PIN: 462-247-958
+2025-05-23 14:03:23,296 - werkzeug - INFO - 127.0.0.1 - - [23/May/2025 14:03:23] "OPTIONS /api/auth/login HTTP/1.1" 200 -
+2025-05-23 14:03:23,432 - werkzeug - INFO - 127.0.0.1 - - [23/May/2025 14:03:23] "POST /api/auth/login HTTP/1.1" 200 -
+2025-05-23 14:03:23,515 - werkzeug - INFO - 127.0.0.1 - - [23/May/2025 14:03:23] "OPTIONS /api/stats HTTP/1.1" 200 -
+2025-05-23 14:03:23,520 - werkzeug - INFO - 127.0.0.1 - - [23/May/2025 14:03:23] "OPTIONS /api/stats HTTP/1.1" 200 -
+2025-05-23 14:03:23,526 - werkzeug - INFO - 127.0.0.1 - - [23/May/2025 14:03:23] "GET /api/stats HTTP/1.1" 200 -
+2025-05-23 14:03:23,533 - werkzeug - INFO - 127.0.0.1 - - [23/May/2025 14:03:23] "GET /api/stats HTTP/1.1" 200 -
