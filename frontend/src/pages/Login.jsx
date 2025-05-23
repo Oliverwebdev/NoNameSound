@@ -32,6 +32,7 @@ const Login = ({ onLogin }) => {
         headers: {
           'Content-Type': 'application/json',
         },
+        credentials: 'include', // Cookie-Auth!
         body: JSON.stringify({
           username: credentials.username,
           password: credentials.password,
@@ -44,13 +45,11 @@ const Login = ({ onLogin }) => {
         throw new Error(data.message || 'Login fehlgeschlagen');
       }
 
-      // Call the onLogin function with the JWT token
-      onLogin(data.access_token);
-      
-      // Redirect to admin dashboard
+      // Kein Token mehr speichern!
+      // Login-State via prop (z.B. Context/State oben im App-Baum)
+      if (onLogin) onLogin();
       navigate('/admin');
     } catch (error) {
-      console.error('Login error:', error);
       setError(error.message || 'Ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut.');
     } finally {
       setIsLoading(false);
@@ -62,21 +61,13 @@ const Login = ({ onLogin }) => {
     hidden: { opacity: 0 },
     visible: { 
       opacity: 1,
-      transition: { 
-        duration: 0.6,
-        when: "beforeChildren",
-        staggerChildren: 0.2
-      }
+      transition: { duration: 0.6, when: "beforeChildren", staggerChildren: 0.2 }
     }
   };
   
   const itemVariants = {
     hidden: { y: 20, opacity: 0 },
-    visible: { 
-      y: 0, 
-      opacity: 1,
-      transition: { duration: 0.4 }
-    }
+    visible: { y: 0, opacity: 1, transition: { duration: 0.4 } }
   };
 
   return (

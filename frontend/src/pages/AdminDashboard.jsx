@@ -2,8 +2,7 @@ import { useState, useEffect } from 'react';
 import { Routes, Route, Link, useNavigate, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import './AdminDashboard.css';
-import { API_URL } from '../api';
-
+import { authFetch } from '../utils/authFetch';
 
 // Admin components
 import AdminHome from './admin/AdminHome';
@@ -24,32 +23,19 @@ const AdminDashboard = () => {
     // Fetch dashboard stats
     const fetchStats = async () => {
       try {
-        const token = localStorage.getItem('token');
-        if (!token) {
-          throw new Error('No authentication token found');
-        }
-
-        const response = await fetch(`${API_URL}/stats`,  {
-          headers: {
-            'Authorization': `Bearer ${token}`
-          }
-        });
-
+        const response = await authFetch('/stats'); // Kein Bearer-Header, kein Token!
         if (!response.ok) {
           if (response.status === 401 || response.status === 403) {
-            // Token expired or invalid, logout
-            localStorage.removeItem('token');
+            // Auth fehlgeschlagen, zurück zum Login
             navigate('/login');
             return;
           }
           throw new Error('Failed to fetch dashboard data');
         }
-
         const data = await response.json();
         setStats(data);
         setError(null);
       } catch (error) {
-        console.error('Dashboard error:', error);
         setError(error.message || 'Ein Fehler ist aufgetreten');
       } finally {
         setIsLoading(false);

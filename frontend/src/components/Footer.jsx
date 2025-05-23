@@ -1,35 +1,38 @@
 import { Link } from 'react-router-dom';
 import './Footer.css';
 
-
 function Footer() {
   return (
     <footer className="footer">
       <div className="footer-container">
         <div className="footer-section">
-          <h3>Über uns</h3>
-          <p>Wir verleihen hochwertige Musikinstrumente für jedes Event. Seit 2023 mit Leidenschaft und Klang.</p>
+          <h3>Rólunk</h3>
+          <p>
+            Professzionális hangtechnika bérlés: bulikra, klubokba, esküvőkre és rendezvényekre.
+            Gyors telepítés, szakértői támogatás és megfizethető árak.
+          </p>
         </div>
 
         <div className="footer-section">
-          <h3>Kontakt</h3>
-          <p>Musikstraße 123<br />12345 Musikstadt</p>
-          <p>Tel: +49 123 456789<br />E-Mail: info@musikverleih.de</p>
+          <h3>Kapcsolat</h3>
+          <p>Budapest, Hang utca 4.<br />Magyarország</p>
+          <p>Tel: +36 30 994 3215<br />E-mail: <a href="mailto:nonamesound0@gmail.com">nonamesound0@gmail.com</a></p>
         </div>
 
         <div className="footer-section">
-          <h3>Schnellzugriff</h3>
+          <h3>Gyorslinkek</h3>
           <ul>
-            <li><Link to="/">Startseite</Link></li>
-            <li><Link to="/products">Produkte</Link></li>
-            <li><Link to="/contact">Kontakt</Link></li>
-            <li><Link to="/login">Login</Link></li>
+            <li><Link to="/">Főoldal</Link></li>
+            <li><Link to="/products">Termékek</Link></li>
+            <li><Link to="/contact">Kapcsolat</Link></li>
+            <li><Link to="/login">Bejelentkezés</Link></li>
           </ul>
         </div>
       </div>
 
       <div className="footer-bottom">
-        <p>&copy; {new Date().getFullYear()} Musikverleih. Alle Rechte vorbehalten.</p>
+        <p>&copy; {new Date().getFullYear()} NoNameSound – Minden jog fenntartva.</p>
+        <p className="developer-note">👨‍💻 Entwickelt mit ♥ von <a href="https://github.com/Oliverwebdev" target="_blank" rel="noopener noreferrer">Oliverwebdev</a></p>
       </div>
     </footer>
   );

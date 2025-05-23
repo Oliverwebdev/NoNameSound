@@ -4,8 +4,10 @@ import ProductModal from '../../components/modals/ProductModal';
 import ConfirmDeleteModal from '../../components/modals/ConfirmDeleteModal';
 import { API_URL } from '../../api';
 import './ManageProducts.css';
+import { authFetch } from '../../utils/authFetch';
 
 function ManageProducts() {
+  const token = localStorage.getItem('token');
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -16,6 +18,8 @@ function ManageProducts() {
   const [warnDelete, setWarnDelete] = useState(null);
 
   useEffect(() => {
+    
+
     if (message || error || warnDelete) {
       const timeout = setTimeout(() => {
         setMessage(null);
@@ -29,8 +33,7 @@ function ManageProducts() {
   const fetchProducts = async () => {
     try {
       setIsLoading(true);
-      const token = localStorage.getItem('token');
-      const res = await fetch(`${API_URL}/articles`, {
+      const res = await authFetch(`/articles`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -66,7 +69,6 @@ function ManageProducts() {
   };
 
   const handleSaveProduct = async (data) => {
-    const token = localStorage.getItem('token');
     const method = data.id ? 'PUT' : 'POST';
     const url = data.id ? `/articles/${data.id}` : '/articles';
 
@@ -76,7 +78,7 @@ function ManageProducts() {
     console.log('🔍 Sending data to API:', data);
 
     try {
-      const res = await fetch(`${API_URL}${url}`, {
+      const res = await authFetch(`${url}`, {
         method,
         headers: {
           'Content-Type': 'application/json',
@@ -98,10 +100,9 @@ function ManageProducts() {
   };
 
   const handleDeleteProduct = async () => {
-    const token = localStorage.getItem('token');
     console.log('🗑️ Versuche zu löschen:', selectedProduct);
     try {
-      const res = await fetch(`${API_URL}/articles/${selectedProduct.id}`, {
+      const res = await authFetch(`/articles/${selectedProduct.id}`, {
         method: 'DELETE',
         headers: {
           Authorization: `Bearer ${token}`,

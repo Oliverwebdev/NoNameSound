@@ -142,3 +142,35 @@
     font-size: 0.85rem;
   }
 }
+
+.navbar-logo-img {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.navbar-logo span {
+  font-size: 1.6rem;
+  font-weight: 700;
+  background: linear-gradient(120deg, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.developer-badge {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #aaa;
+  padding: 0.3rem 0;
+  background: #1b1b2b;
+  font-family: monospace;
+  letter-spacing: 0.5px;
+}
+
+.developer-badge a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.developer-badge a:hover {
+  text-decoration: underline;
+}

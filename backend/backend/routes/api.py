@@ -1,5 +1,7 @@
-from flask import Blueprint, request, jsonify, g, abort, current_app
-from flask_jwt_extended import jwt_required, get_jwt_identity, create_access_token
+from flask import Blueprint, request, jsonify, g, abort, current_app, make_response
+from flask_jwt_extended import (
+    jwt_required, get_jwt_identity, create_access_token, set_access_cookies, unset_jwt_cookies
+)
 from ..utils.db import get_db
 from ..utils.helpers import (
     validate_email, send_email, owner_required, 
@@ -10,34 +12,6 @@ from werkzeug.security import check_password_hash, generate_password_hash
 
 logger = logging.getLogger(__name__)
 bp = Blueprint('api', __name__)
-
-# --- Rate Limiting (nur für Login) ---
-@bp.before_app_request
-def limit_login_attempts():
-    if request.endpoint == 'login':
-        ip = request.remote_addr
-        current_time = datetime.datetime.now()
-        if not hasattr(current_app, 'login_attempts'):
-            current_app.login_attempts = {}
-        # Entferne alte Einträge (> 15 min)
-        for stored_ip in list(current_app.login_attempts.keys()):
-            attempts = current_app.login_attempts[stored_ip]
-            if (current_time - attempts['timestamp']).total_seconds() > 900:
-                del current_app.login_attempts[stored_ip]
-        if ip in current_app.login_attempts:
-            attempts = current_app.login_attempts[ip]
-            if attempts['count'] >= 5 and (current_time - attempts['timestamp']).total_seconds() < 900:
-                abort(429)
-            attempts['count'] += 1
-            attempts['timestamp'] = current_time
-        else:
-            current_app.login_attempts[ip] = {'count': 1, 'timestamp': current_time}
-
-@bp.errorhandler(429)
-def too_many_requests(error):
-    return jsonify({
-        "message": "Zu viele Anfragen. Bitte versuche es in 15 Minuten erneut."
-    }), 429
 
 # --- Auth ---
 
@@ -53,8 +27,16 @@ def login():
     user = db.execute('SELECT * FROM users WHERE username = ?', (username,)).fetchone()
     if user and check_password_hash(user['password_hash'], password):
         access_token = create_access_token(identity=username)
-        return jsonify(access_token=access_token), 200
+        resp = make_response(jsonify(message="Login erfolgreich"))
+        set_access_cookies(resp, access_token)
+        return resp
     return jsonify({"message": "Falsche Anmeldedaten"}), 401
+
+@bp.route('/api/auth/logout', methods=['POST'])
+def logout():
+    resp = make_response(jsonify(message="Logout erfolgreich"))
+    unset_jwt_cookies(resp)
+    return resp
 
 @bp.route('/api/auth/change-password', methods=['PUT'])
 @jwt_required()
@@ -224,11 +206,6 @@ def delete_article(article_id):
     db.execute('DELETE FROM articles WHERE id = ?', (article_id,))
     db.commit()
     return jsonify({"message": "Artikel erfolgreich gelöscht"}), 200
-
-# --- Health Check ---
-@bp.route("/healthz")
-def healthz():
-    return "OK", 200
 
 # --- Mietanfragen ---
 
@@ -597,5 +574,3 @@ def method_not_allowed(error):
 def internal_server_error(error):
     logger.error(f"Interner Serverfehler: {str(error)}")
     return jsonify({"message": "Interner Serverfehler"}), 500
-
-# (Ende)

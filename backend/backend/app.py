@@ -1,8 +1,6 @@
 import os
 import logging
 from logging.handlers import RotatingFileHandler
-import datetime
-
 from flask import Flask
 from flask_cors import CORS
 from flask_jwt_extended import JWTManager
@@ -14,7 +12,6 @@ from .utils.db import get_db, init_db, ensure_admin_user, close_db
 from .utils.helpers import validate_email, send_email, owner_required
 from .routes.api import bp
 
-
 # .env laden
 load_dotenv()
 
@@ -22,16 +19,21 @@ load_dotenv()
 app = Flask(__name__)
 app.config.from_object(Config)
 
-# CORS konfigurieren (Frontend-URLs ggf. anpassen)
+# --- JWT NUR AUS COOKIES LESEN (XSS-IMMUN) ---
+app.config['JWT_TOKEN_LOCATION'] = ['cookies']
+app.config['JWT_COOKIE_SECURE'] = False        # True für HTTPS-Deployments!
+app.config['JWT_COOKIE_SAMESITE'] = 'Lax'      # Oder 'Strict'
+app.config['JWT_COOKIE_CSRF_PROTECT'] = False  # Auf True für PROD+CSRF
+
+jwt_manager = JWTManager(app)
+
+# CORS-Konfiguration – Cookies erlauben!
 CORS(app, resources={r"/api/*": {"origins": [
     "http://localhost:5173",
     "https://nonamesound-frontend.onrender.com"
-]}})
+]}}, supports_credentials=True)
 
-# JWT konfigurieren
-jwt_manager = JWTManager(app)
-
-# Logging mit Rotation
+# Logging mit Rotation (für Produktion robust!)
 log_handler = RotatingFileHandler('app.log', maxBytes=1024*1024, backupCount=5)
 log_handler.setLevel(logging.INFO)
 formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
@@ -42,10 +44,10 @@ app.logger.setLevel(logging.INFO)
 # API-Blueprint registrieren
 app.register_blueprint(bp)
 
-# DB-Teardown
+# DB-Teardown für Flask-Context
 app.teardown_appcontext(close_db)
 
-# CLI-Command zum Initialisieren der DB
+# CLI-Command zum Initialisieren der DB (einmalig ausführen: flask init-db)
 @app.cli.command("init-db")
 def init_db_command():
     """Initialisiert die Datenbank und erstellt einen Admin-User"""
@@ -56,10 +58,11 @@ def init_db_command():
     os.remove('schema.sql')
     print('✅ Datenbank initialisiert und Admin-User abgesichert.')
 
-# Optional: Healthcheck direkt im app.py (falls nicht im Blueprint)
+# Healthcheck-Route
 @app.route("/healthz")
 def healthz():
     return "OK", 200
 
+# Starte die App (nur wenn direkt ausgeführt, nicht beim Import)
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)), debug=True)

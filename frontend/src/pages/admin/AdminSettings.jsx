@@ -1,21 +1,10 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 // import './AdminSettings.css';
+import { authFetch } from '../../utils/authFetch'; 
 
 // Mock authFetch function for demo
-const authFetch = async (url, options) => {
-  await new Promise(resolve => setTimeout(resolve, 1500));
-  if (Math.random() > 0.7) {
-    return {
-      ok: false,
-      json: async () => ({ message: 'Aktuelles Passwort ist falsch' })
-    };
-  }
-  return {
-    ok: true,
-    json: async () => ({ message: 'Passwort erfolgreich geändert' })
-  };
-};
+
 
 function AdminSettings() {
   const [currentPassword, setCurrentPassword] = useState('');
