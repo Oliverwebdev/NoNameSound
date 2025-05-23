@@ -13,19 +13,23 @@ from flask import Flask, request, jsonify, g, abort, make_response
 from flask_cors import CORS
 from flask_jwt_extended import JWTManager, create_access_token, jwt_required, get_jwt_identity
 import jwt
+from dotenv import load_dotenv
+load_dotenv() 
 
 # Konfiguration
 class Config:
-    SECRET_KEY = os.environ.get('SECRET_KEY', 'geheim_entwicklungsschluessel_ersetzen')
-    DATABASE_PATH = os.environ.get('DATABASE_PATH', 'musikverleih.db')
-    JWT_SECRET_KEY = os.environ.get('JWT_SECRET_KEY', 'jwt_geheim_entwicklungsschluessel_ersetzen')
+    SECRET_KEY = os.environ.get('SECRET_KEY', )
+    DATABASE_PATH = os.environ.get('DATABASE_PATH', )
+    JWT_SECRET_KEY = os.environ.get('JWT_SECRET_KEY', )
     JWT_ACCESS_TOKEN_EXPIRES = datetime.timedelta(hours=1)
-    SMTP_SERVER = os.environ.get('SMTP_SERVER', 'smtp.beispiel.de')
+    SMTP_SERVER = os.environ.get('SMTP_SERVER', )
     SMTP_PORT = int(os.environ.get('SMTP_PORT', 587))
-    SMTP_USERNAME = os.environ.get('SMTP_USERNAME', 'benutzer@beispiel.de')
-    SMTP_PASSWORD = os.environ.get('SMTP_PASSWORD', 'passwort')
-    OWNER_EMAIL = os.environ.get('OWNER_EMAIL', 'besitzer@beispiel.de')
-    MAIL_DEFAULT_SENDER = os.environ.get('MAIL_DEFAULT_SENDER', 'noreply@musikverleih.de')
+    SMTP_USERNAME = os.environ.get('SMTP_USERNAME', )
+    SMTP_PASSWORD = os.environ.get('SMTP_PASSWORD', )
+    OWNER_EMAIL = os.environ.get('OWNER_EMAIL', )
+    MAIL_DEFAULT_SENDER = os.environ.get('MAIL_DEFAULT_SENDER', )
+    BASE_URL         = os.environ.get('BASE_URL')
+
 
 # Instanziierung der Flask-App
 app = Flask(__name__)
