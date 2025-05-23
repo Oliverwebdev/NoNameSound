@@ -1,0 +1,95 @@
+/* ProductModal.css */
+:root {
+  --primary-color: #7c4dff;
+  --secondary-color: #ff7043;
+  --warm-accent: #ffab40;
+  --bg-dark: #1e1b2f;
+  --bg-card: #292244;
+  --text-light: #f2f2f2;
+  --radius: 12px;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(3px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  padding: 2rem;
+  width: 95%;
+  max-width: 520px;
+  color: var(--text-light);
+  box-shadow: 0 0 25px rgba(0,0,0,0.3);
+}
+
+.modal-title {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.modal-form label {
+  display: block;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.modal-form input,
+.modal-form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: var(--radius);
+  border: none;
+  margin-top: 0.3rem;
+  background: #3a2f55;
+  color: var(--text-light);
+  font-size: 1rem;
+}
+
+.modal-form textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.modal-actions {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.modal-actions button {
+  padding: 0.6rem 1.2rem;
+  font-weight: bold;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.modal-actions button[type="submit"] {
+  background: var(--primary-color);
+  color: white;
+}
+
+.cancel-btn {
+  background: var(--warm-accent);
+  color: #1e1e1e;
+}

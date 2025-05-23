@@ -1,0 +1,35 @@
+
+/* ConfirmDeleteModal.css */
+.modal-content.danger {
+  border: 1px solid var(--secondary-color);
+}
+
+.modal-message {
+  font-size: 1rem;
+  margin: 1rem 0;
+}
+
+.delete-btn {
+  background: var(--secondary-color);
+  color: white;
+}
+
+@media (max-width: 600px) {
+  .modal-content {
+    padding: 1.2rem;
+  }
+
+  .modal-title {
+    font-size: 1.5rem;
+  }
+
+  .modal-form input,
+  .modal-form textarea {
+    font-size: 0.95rem;
+  }
+
+  .modal-actions button {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
+}
