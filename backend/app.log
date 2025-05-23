@@ -638,3 +638,11 @@
 2025-05-23 21:16:37,677 - werkzeug - INFO - 127.0.0.1 - - [23/May/2025 21:16:37] "GET /api/articles HTTP/1.1" 200 -
 2025-05-23 21:17:24,341 - werkzeug - INFO - 127.0.0.1 - - [23/May/2025 21:17:24] "GET /api/articles HTTP/1.1" 200 -
 2025-05-23 21:17:24,363 - werkzeug - INFO - 127.0.0.1 - - [23/May/2025 21:17:24] "GET /api/articles HTTP/1.1" 200 -
+2025-05-23 21:30:20,279 - werkzeug - INFO - 127.0.0.1 - - [23/May/2025 21:30:20] "GET /api/articles HTTP/1.1" 200 -
+2025-05-23 21:30:20,298 - werkzeug - INFO - 127.0.0.1 - - [23/May/2025 21:30:20] "GET /api/articles HTTP/1.1" 200 -
+2025-05-23 21:30:57,996 - werkzeug - INFO - 127.0.0.1 - - [23/May/2025 21:30:57] "GET /api/articles HTTP/1.1" 200 -
+2025-05-23 21:30:58,005 - werkzeug - INFO - 127.0.0.1 - - [23/May/2025 21:30:58] "GET /api/articles HTTP/1.1" 200 -
+2025-05-23 21:30:59,051 - werkzeug - INFO - 127.0.0.1 - - [23/May/2025 21:30:59] "GET /api/articles?featured=true HTTP/1.1" 200 -
+2025-05-23 21:30:59,057 - werkzeug - INFO - 127.0.0.1 - - [23/May/2025 21:30:59] "GET /api/articles?featured=true HTTP/1.1" 200 -
+2025-05-23 21:31:00,069 - werkzeug - INFO - 127.0.0.1 - - [23/May/2025 21:31:00] "GET /api/articles HTTP/1.1" 200 -
+2025-05-23 21:31:00,076 - werkzeug - INFO - 127.0.0.1 - - [23/May/2025 21:31:00] "GET /api/articles HTTP/1.1" 200 -
