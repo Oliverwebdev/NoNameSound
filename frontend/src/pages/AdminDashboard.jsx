@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import { Routes, Route, Link, useNavigate, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import './AdminDashboard.css';
+import { API_URL } from '../api';
+
 
 // Admin components
 import AdminHome from './admin/AdminHome';
@@ -27,7 +29,7 @@ const AdminDashboard = () => {
           throw new Error('No authentication token found');
         }
 
-        const response = await fetch('/api/stats', {
+        const response = await fetch(`${API_URL}/stats`,  {
           headers: {
             'Authorization': `Bearer ${token}`
           }

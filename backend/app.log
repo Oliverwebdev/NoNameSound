@@ -717,3 +717,13 @@
 2025-05-23 13:18:18,868 - werkzeug - INFO - 127.0.0.1 - - [23/May/2025 13:18:18] "GET /api/rentals HTTP/1.1" 200 -
 2025-05-23 13:23:16,923 - werkzeug - INFO - 127.0.0.1 - - [23/May/2025 13:23:16] "OPTIONS /api/articles?featured=true HTTP/1.1" 200 -
 2025-05-23 13:23:16,939 - werkzeug - INFO - 127.0.0.1 - - [23/May/2025 13:23:16] "GET /api/articles?featured=true HTTP/1.1" 200 -
+2025-05-23 13:28:59,781 - werkzeug - INFO - 127.0.0.1 - - [23/May/2025 13:28:59] "OPTIONS /api/auth/login HTTP/1.1" 200 -
+2025-05-23 13:28:59,916 - werkzeug - INFO - 127.0.0.1 - - [23/May/2025 13:28:59] "POST /api/auth/login HTTP/1.1" 200 -
+2025-05-23 13:29:33,078 - werkzeug - INFO - 127.0.0.1 - - [23/May/2025 13:29:33] "OPTIONS /api/articles?featured=true HTTP/1.1" 200 -
+2025-05-23 13:29:33,088 - werkzeug - INFO - 127.0.0.1 - - [23/May/2025 13:29:33] "GET /api/articles?featured=true HTTP/1.1" 200 -
+2025-05-23 13:36:51,574 - werkzeug - INFO - 127.0.0.1 - - [23/May/2025 13:36:51] "OPTIONS /api/auth/login HTTP/1.1" 200 -
+2025-05-23 13:36:51,725 - werkzeug - INFO - 127.0.0.1 - - [23/May/2025 13:36:51] "POST /api/auth/login HTTP/1.1" 200 -
+2025-05-23 13:36:51,835 - werkzeug - INFO - 127.0.0.1 - - [23/May/2025 13:36:51] "OPTIONS /api/stats HTTP/1.1" 200 -
+2025-05-23 13:36:51,843 - werkzeug - INFO - 127.0.0.1 - - [23/May/2025 13:36:51] "OPTIONS /api/stats HTTP/1.1" 200 -
+2025-05-23 13:36:51,850 - werkzeug - INFO - 127.0.0.1 - - [23/May/2025 13:36:51] "GET /api/stats HTTP/1.1" 200 -
+2025-05-23 13:36:51,864 - werkzeug - INFO - 127.0.0.1 - - [23/May/2025 13:36:51] "GET /api/stats HTTP/1.1" 200 -
