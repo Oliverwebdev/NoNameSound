@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import ProductModal from '../../components/modals/ProductModal';
 import ConfirmDeleteModal from '../../components/modals/ConfirmDeleteModal';
 import { API_URL } from '../../api';
-// import './ManageProducts.css';
+import './ManageProducts.css';
 
 function ManageProducts() {
   const [products, setProducts] = useState([]);
@@ -14,6 +14,17 @@ function ManageProducts() {
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [message, setMessage] = useState(null);
   const [warnDelete, setWarnDelete] = useState(null);
+
+  useEffect(() => {
+    if (message || error || warnDelete) {
+      const timeout = setTimeout(() => {
+        setMessage(null);
+        setError(null);
+        setWarnDelete(null);
+      }, 6000);
+      return () => clearTimeout(timeout);
+    }
+  }, [message, error, warnDelete]);
 
   const fetchProducts = async () => {
     try {
@@ -119,9 +130,11 @@ function ManageProducts() {
         <button className="add-product-btn" onClick={handleAddNew}>+ Neues Produkt</button>
       </div>
 
-      {message && <div className="message success">{message}</div>}
-      {error && <div className="message error">{error}</div>}
-      {warnDelete && <div className="message warning">⚠️ {warnDelete}</div>}
+      <AnimatePresence>
+        {message && <motion.div className="message success" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>{message}</motion.div>}
+        {error && <motion.div className="message error" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>{error}</motion.div>}
+        {warnDelete && <motion.div className="message warning" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>⚠️ {warnDelete}</motion.div>}
+      </AnimatePresence>
 
       {isLoading ? (
         <div className="loading-spinner"></div>
