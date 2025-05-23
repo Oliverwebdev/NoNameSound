@@ -36,7 +36,11 @@ app = Flask(__name__)
 app.config.from_object(Config)
 
 # CORS konfigurieren für Frontend-Backend-Kommunikation
-CORS(app, resources={r"/api/*": {"origins": "*"}})
+CORS(app, resources={r"/api/*": {"origins": [
+    "http://localhost:5173",  # lokal für Dev
+    "https://nonamesound-frontend.onrender.com"
+]}})
+
 
 # JWT für Authentifizierung
 jwt_manager = JWTManager(app)

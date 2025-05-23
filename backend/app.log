@@ -727,3 +727,24 @@
 2025-05-23 13:36:51,843 - werkzeug - INFO - 127.0.0.1 - - [23/May/2025 13:36:51] "OPTIONS /api/stats HTTP/1.1" 200 -
 2025-05-23 13:36:51,850 - werkzeug - INFO - 127.0.0.1 - - [23/May/2025 13:36:51] "GET /api/stats HTTP/1.1" 200 -
 2025-05-23 13:36:51,864 - werkzeug - INFO - 127.0.0.1 - - [23/May/2025 13:36:51] "GET /api/stats HTTP/1.1" 200 -
+2025-05-23 13:38:42,915 - werkzeug - INFO - 127.0.0.1 - - [23/May/2025 13:38:42] "OPTIONS /api/articles?featured=true HTTP/1.1" 200 -
+2025-05-23 13:38:42,925 - werkzeug - INFO - 127.0.0.1 - - [23/May/2025 13:38:42] "GET /api/articles?featured=true HTTP/1.1" 200 -
+2025-05-23 13:38:56,839 - werkzeug - INFO - 127.0.0.1 - - [23/May/2025 13:38:56] "OPTIONS /api/auth/login HTTP/1.1" 200 -
+2025-05-23 13:38:56,851 - werkzeug - INFO - 127.0.0.1 - - [23/May/2025 13:38:56] "[31m[1mPOST /api/auth/login HTTP/1.1[0m" 429 -
+2025-05-23 13:41:27,953 - werkzeug - INFO - 127.0.0.1 - - [23/May/2025 13:41:27] "[31m[1mOPTIONS /api/auth/login HTTP/1.1[0m" 429 -
+2025-05-23 13:41:34,952 - werkzeug - INFO - 127.0.0.1 - - [23/May/2025 13:41:34] "OPTIONS /api/articles?featured=true HTTP/1.1" 200 -
+2025-05-23 13:41:34,960 - werkzeug - INFO - 127.0.0.1 - - [23/May/2025 13:41:34] "GET /api/articles?featured=true HTTP/1.1" 200 -
+2025-05-23 13:42:03,840 - werkzeug - INFO - 127.0.0.1 - - [23/May/2025 13:42:03] "OPTIONS /api/stats HTTP/1.1" 200 -
+2025-05-23 13:42:03,847 - werkzeug - INFO - 127.0.0.1 - - [23/May/2025 13:42:03] "OPTIONS /api/stats HTTP/1.1" 200 -
+2025-05-23 13:42:03,852 - werkzeug - INFO - 127.0.0.1 - - [23/May/2025 13:42:03] "GET /api/stats HTTP/1.1" 200 -
+2025-05-23 13:42:03,863 - werkzeug - INFO - 127.0.0.1 - - [23/May/2025 13:42:03] "GET /api/stats HTTP/1.1" 200 -
+2025-05-23 13:42:08,759 - werkzeug - INFO - 127.0.0.1 - - [23/May/2025 13:42:08] "GET /api/stats HTTP/1.1" 200 -
+2025-05-23 13:42:09,989 - werkzeug - INFO - 127.0.0.1 - - [23/May/2025 13:42:09] "OPTIONS /api/stats HTTP/1.1" 200 -
+2025-05-23 13:42:09,997 - werkzeug - INFO - 127.0.0.1 - - [23/May/2025 13:42:09] "GET /api/stats HTTP/1.1" 200 -
+2025-05-23 13:42:10,009 - werkzeug - INFO - 127.0.0.1 - - [23/May/2025 13:42:10] "GET /api/rentals HTTP/1.1" 200 -
+2025-05-23 13:42:10,024 - werkzeug - INFO - 127.0.0.1 - - [23/May/2025 13:42:10] "GET /api/rentals HTTP/1.1" 200 -
+2025-05-23 13:42:12,492 - werkzeug - INFO - 127.0.0.1 - - [23/May/2025 13:42:12] "GET /api/stats HTTP/1.1" 200 -
+2025-05-23 13:42:45,643 - werkzeug - INFO - 127.0.0.1 - - [23/May/2025 13:42:45] "[31m[1mOPTIONS /api/auth/login HTTP/1.1[0m" 429 -
+2025-05-23 13:43:12,547 - werkzeug - INFO - 127.0.0.1 - - [23/May/2025 13:43:12] "[31m[1mOPTIONS /api/auth/login HTTP/1.1[0m" 429 -
+2025-05-23 13:45:22,876 - werkzeug - INFO -  * Detected change in '/home/oliver/Desktop/NoNameSound/backend/app.py', reloading
+2025-05-23 13:45:22,942 - werkzeug - INFO -  * Restarting with stat
