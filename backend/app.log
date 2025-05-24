@@ -793,3 +793,54 @@
 2025-05-23 22:40:16,317 - werkzeug - INFO - 127.0.0.1 - - [23/May/2025 22:40:16] "GET /api/articles HTTP/1.1" 200 -
 2025-05-23 22:48:13,500 - werkzeug - INFO - 127.0.0.1 - - [23/May/2025 22:48:13] "GET /api/articles HTTP/1.1" 200 -
 2025-05-23 22:48:13,504 - werkzeug - INFO - 127.0.0.1 - - [23/May/2025 22:48:13] "GET /api/articles HTTP/1.1" 200 -
+2025-05-24 14:01:17,007 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.46:5000
+2025-05-24 14:01:17,007 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-24 14:01:17,008 - werkzeug - INFO -  * Restarting with stat
+2025-05-24 14:01:17,204 - werkzeug - WARNING -  * Debugger is active!
+2025-05-24 14:01:17,204 - werkzeug - INFO -  * Debugger PIN: 462-247-958
+2025-05-24 14:01:49,019 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 14:01:49] "OPTIONS /api/auth/login HTTP/1.1" 200 -
+2025-05-24 14:01:51,392 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 14:01:51] "OPTIONS /api/auth/login HTTP/1.1" 200 -
+2025-05-24 14:01:57,556 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 14:01:57] "OPTIONS /api/auth/login HTTP/1.1" 200 -
+2025-05-24 14:09:53,374 - werkzeug - INFO -  * Detected change in '/home/oliver/Desktop/NoNameSound/backend/backend/__init__.py', reloading
+2025-05-24 14:09:53,425 - werkzeug - INFO -  * Restarting with stat
+2025-05-24 14:09:53,649 - werkzeug - WARNING -  * Debugger is active!
+2025-05-24 14:09:53,649 - werkzeug - INFO -  * Debugger PIN: 462-247-958
+2025-05-24 14:10:06,345 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.46:5000
+2025-05-24 14:10:06,345 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-24 14:10:06,347 - werkzeug - INFO -  * Restarting with stat
+2025-05-24 14:10:06,537 - werkzeug - WARNING -  * Debugger is active!
+2025-05-24 14:10:06,537 - werkzeug - INFO -  * Debugger PIN: 462-247-958
+2025-05-24 14:10:10,680 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 14:10:10] "OPTIONS /api/auth/login HTTP/1.1" 200 -
+2025-05-24 14:10:10,699 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 14:10:10] "[35m[1mPOST /api/auth/login HTTP/1.1[0m" 500 -
+2025-05-24 14:10:14,052 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 14:10:14] "[35m[1mPOST /api/auth/login HTTP/1.1[0m" 500 -
+2025-05-24 14:12:28,648 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.46:5000
+2025-05-24 14:12:28,649 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-24 14:12:28,650 - werkzeug - INFO -  * Restarting with stat
+2025-05-24 14:12:28,839 - werkzeug - WARNING -  * Debugger is active!
+2025-05-24 14:12:28,840 - werkzeug - INFO -  * Debugger PIN: 462-247-958
+2025-05-24 14:12:32,588 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 14:12:32] "OPTIONS /api/auth/login HTTP/1.1" 200 -
+2025-05-24 14:12:32,604 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 14:12:32] "[35m[1mPOST /api/auth/login HTTP/1.1[0m" 500 -
+2025-05-24 14:12:36,036 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 14:12:36] "[35m[1mPOST /api/auth/login HTTP/1.1[0m" 500 -
+2025-05-24 14:14:34,634 - werkzeug - INFO -  * Detected change in '/home/oliver/Desktop/NoNameSound/backend/backend/__main__.py', reloading
+2025-05-24 14:14:34,717 - werkzeug - INFO -  * Restarting with stat
+2025-05-24 14:14:34,976 - werkzeug - WARNING -  * Debugger is active!
+2025-05-24 14:14:34,976 - werkzeug - INFO -  * Debugger PIN: 462-247-958
+2025-05-24 14:14:35,997 - werkzeug - INFO -  * Detected change in '/home/oliver/Desktop/NoNameSound/backend/backend/__main__.py', reloading
+2025-05-24 14:14:36,077 - werkzeug - INFO -  * Restarting with stat
+2025-05-24 14:14:36,338 - werkzeug - WARNING -  * Debugger is active!
+2025-05-24 14:14:36,338 - werkzeug - INFO -  * Debugger PIN: 462-247-958
+2025-05-24 14:14:39,741 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 14:14:39] "OPTIONS /api/auth/login HTTP/1.1" 200 -
+2025-05-24 14:14:39,759 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 14:14:39] "[35m[1mPOST /api/auth/login HTTP/1.1[0m" 500 -
+2025-05-24 14:14:46,021 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 14:14:46] "OPTIONS /api/auth/login HTTP/1.1" 200 -
+2025-05-24 14:14:46,035 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 14:14:46] "[35m[1mPOST /api/auth/login HTTP/1.1[0m" 500 -
+2025-05-24 14:16:14,945 - werkzeug - INFO -  * Detected change in '/home/oliver/Desktop/NoNameSound/backend/backend/config.py', reloading
+2025-05-24 14:16:15,033 - werkzeug - INFO -  * Restarting with stat
